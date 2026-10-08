@@ -158,3 +158,4 @@ Memanfaatkan aset data multimodal (transkrip wicara video dan teks komentar publ
 
 2. **Jalur Akademik Formal (Jika Dosen Mengharuskan Perbandingan Model):**
    > Ambil **Topik 4** (*Komparasi Naive Bayes vs SVM vs Indo-RoBERTa*). Dosen mata kuliah Data Mining sangat suka melihat tabel *Accuracy, Precision, Recall, F1-Score* yang membandingkan metode klasik vs *deep learning*.
+
