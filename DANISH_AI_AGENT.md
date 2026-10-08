@@ -13,20 +13,24 @@ Academic Data Mining project (TI-3A) building Python scripts to extract YouTube 
 - Run: `python Youtube_Data_Collection_API/main.py --input-csv Youtube_Data_Collection_API/input_videos_template.csv`
 - Preprocess: `python data_preprocessing.py`
 - Transcribe: `python fetch_youtube_transcripts.py`
+- Classify: `python classify_sentiment_indobert.py`
 - Test: `pytest Youtube_Data_Collection_API/test_collector.py`
 
 ## Structure map (top-level only, 1 line per folder)
 - `SKILL.md` — AI context management rules
 - `data/` — Raw datasets (`data/raw/`) and preprocessed outputs (`data/processed/`)
 - `informasi/` — Lecture notes (`materi/`) and preprocessing analysis/roadmap (`catatan/`)
+- `models/` — Local Hugging Face transformer model cache (gitignored)
 - `data_preprocessing.py` — 100% Data preprocessing pipeline script
 - `fetch_youtube_transcripts.py` — YouTube transcript extraction with auto-resume & VPN rotation
+- `classify_sentiment_indobert.py` — Local Indo-RoBERTa sentiment classifier for comments
 - `Youtube_Data_Collection_API/` — YouTube Data API v3 & RYD data collection implementation
 
 ## Conventions that differ from defaults / can't be inferred
 - Neutrality: scripts, logs, comments, and variable names must remain politically neutral and statistical.
 - Quota efficiency: never paginate comment replies; use `totalReplyCount` from `commentThreads`.
-- Output: 2 clean CSV files (`dataset_video_politik.csv`, `dataset_komentar_politik.csv`) with cleaned tabs/newlines.
+- Output: Clean CSV files in data/raw/ and data/processed/ (video, komentar, transkrip) with cleaned tabs/newlines.
+- Summary column in dataset_video_clean.csv must contain no commas and no double-quotes to keep naive CSV split safe.
 
 ## DO NOT touch
 - `.env` (contains sensitive `YOUTUBE_API_KEY`)
@@ -36,6 +40,12 @@ Academic Data Mining project (TI-3A) building Python scripts to extract YouTube 
 - Disabled comments or private videos must be handled gracefully without script failure.
 
 ## Changelog (newest first, 1 line per entry, NOT a diff)
+- 2026-10-08: Classified 5,207 comments using local Indo-RoBERTa model into data/processed/dataset_komentar_labeled.csv (88.7% confidence).
+- 2026-10-08: Completed summary for all 55 videos in data/processed/dataset_video_clean.csv with neutral comma-free summaries.
+- 2026-10-08: Filled summary for 29 videos in data/processed/dataset_video_clean.csv with neutral comma-free summaries.
+- 2026-10-08: Filled summary for first 9 videos in data/processed/dataset_video_clean.csv with neutral comma-free summaries.
+- 2026-10-08: Added summary column to data/processed/dataset_video_clean.csv with first video summary for m-VTr83vz98.
+- 2026-10-08: Exported transcript dataset to data/raw/dataset_transkrip_video.csv (55 rows, 134k words).
 - 2026-10-08: Extracted 100% video transcripts (55/55 videos, 134,986 words) into data/processed/video_transcripts.json.
 - 2026-10-08: Curated and verified 20 academic journals supporting dataset and preprocessing in informasi/catatan/.
 - 2026-10-08: Built and executed 100% data preprocessing pipeline in data_preprocessing.py into data/processed/.

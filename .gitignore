@@ -29,3 +29,6 @@ venv.bak/
 # Datasets output (keep template file)
 *.csv
 !input_videos_template.csv
+
+# Local AI Models cache
+models/
