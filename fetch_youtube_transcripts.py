@@ -4,8 +4,8 @@ Deskripsi: Mengambil transkrip dari seluruh video YouTube menggunakan youtube-tr
 dengan fitur cerdas:
 1. Incremental Resume: Menghindari fetch ulang video yang sudah sukses diambil sebelumnya.
 2. Jitter / Noise Cooldown: Jeda realistis antar-request (base delay + random noise).
-3. Smart Exponential Backoff: Jika terkena blokir IP / rate-limit, otomatis cooling down
-   selama 40-70 detik lalu mencoba kembali (retry).
+3. Full Automatic VPN Rotation: Jika terkena blokir IP / rate-limit, otomatis merotasi server
+   Proton VPN via CLI (protonvpn connect --random), menunggu koneksi stabil, lalu retry otomatis!
 4. Auto-Save: Menyimpan progress ke JSON dan Markdown setiap kali ada video yang diproses.
 """
 
@@ -13,6 +13,7 @@ import json
 import logging
 import os
 import random
+import subprocess
 import time
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional, Tuple
@@ -36,6 +37,31 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+def rotate_protonvpn() -> bool:
+    """
+    Otomatis mengganti IP menggunakan Proton VPN CLI (connect --random).
+    """
+    try:
+        print("\n" + ">" * 60)
+        print("MENGGANTI SERVER PROTON VPN OTOMATIS...")
+        print(">" * 60)
+        res = subprocess.run(
+            ["protonvpn", "connect", "--random"],
+            capture_output=True,
+            text=True,
+            timeout=30,
+        )
+        output_msg = res.stdout.strip() or res.stderr.strip()
+        print(f"Hasil Rotasi VPN: {output_msg}")
+        # Beri jeda 8-10 detik agar antarmuka jaringan & DNS stabil
+        print("Menunggu antarmuka jaringan VPN stabil (8 detik)...")
+        time.sleep(8)
+        return res.returncode == 0
+    except Exception as e:
+        logger.error("Gagal melakukan rotasi VPN via CLI: %s", e)
+        return False
+
+
 def extract_video_transcript(
     api: YouTubeTranscriptApi,
     video_id: str,
@@ -43,7 +69,7 @@ def extract_video_transcript(
     max_retries: int = 3,
 ) -> Tuple[Dict[str, Any], bool]:
     """
-    Mengambil transkrip untuk satu video_id dengan penanganan retry & cooldown dinamis jika kena block.
+    Mengambil transkrip untuk satu video_id dengan penanganan retry & auto VPN rotation.
     Return: (result_dict, was_rate_limited)
     """
     if preferred_languages is None:
@@ -125,17 +151,14 @@ def extract_video_transcript(
 
             if is_ip_block and attempt < max_retries:
                 was_blocked = True
-                # Cooldown lebih panjang dengan noise acak (45 - 75 detik)
-                sleep_cooldown = round(random.uniform(45.0, 70.0), 2)
                 logger.warning(
-                    "Terdeteksi rate-limit YouTube pada percobaan %d/%d untuk video %s! Istirahat cooldown %.1f detik...",
+                    "Terdeteksi rate-limit YouTube pada percobaan %d/%d untuk video %s!",
                     attempt,
                     max_retries,
                     video_id,
-                    sleep_cooldown,
                 )
-                time.sleep(sleep_cooldown)
-                # Re-initialize api
+                # Rotasi VPN secara otomatis!
+                rotate_protonvpn()
                 api = YouTubeTranscriptApi()
                 continue
             else:
@@ -207,12 +230,12 @@ def fetch_all_transcripts(
     input_csv_path: str = "data/processed/dataset_video_clean.csv",
     output_json_path: str = "data/processed/video_transcripts.json",
     output_summary_md: str = "data/processed/ringkasan_transkrip.md",
-    base_delay: float = 7.0,
-    noise_range: Tuple[float, float] = (3.0, 7.0),
+    base_delay: float = 6.0,
+    noise_range: Tuple[float, float] = (2.0, 5.0),
     resume: bool = True,
 ):
     """
-    Eksekusi ekstraksi dengan jeda realistis dan auto-resume.
+    Eksekusi ekstraksi dengan jeda realistis, auto-resume, dan rotasi Proton VPN otomatis.
     """
     if not os.path.exists(input_csv_path):
         input_csv_path = "data/raw/dataset_video_politik.csv"
@@ -237,7 +260,7 @@ def fetch_all_transcripts(
     api = YouTubeTranscriptApi()
 
     print("=" * 65)
-    print("MEMULAI PENGAMBILAN TRANSKRIP (MODE RESUME + REALISTIC COOLDOWN)")
+    print("MEMULAI PENGAMBILAN TRANSKRIP (FULL OTOMATIS + ROTASI PROTON VPN)")
     print("=" * 65)
 
     for idx, row in df.iterrows():
@@ -285,7 +308,7 @@ def fetch_all_transcripts(
         # Cooldown realistis dengan noise acak
         noise = random.uniform(*noise_range)
         sleep_duration = round(base_delay + noise, 2)
-        print(f"     -> Cooldown realistis: {sleep_duration} detik...")
+        print(f"     -> Jeda santai: {sleep_duration} detik...")
         time.sleep(sleep_duration)
 
     print("\n" + "=" * 65)
