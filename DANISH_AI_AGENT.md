@@ -34,6 +34,7 @@ Academic Data Mining project (TI-3A) building Python scripts to extract YouTube 
 - Disabled comments or private videos must be handled gracefully without script failure.
 
 ## Changelog (newest first, 1 line per entry, NOT a diff)
+- 2026-10-08: Curated and verified 20 academic journals supporting dataset and preprocessing in informasi/catatan/.
 - 2026-10-08: Built and executed 100% data preprocessing pipeline in data_preprocessing.py into data/processed/.
 - 2026-10-08: Documented dataset defense strategy and preprocessing action plan in informasi/catatan/.
 - 2026-10-08: Generated sanitized Markdown study notes for Week 01-04 in ppt/ without internal/personal metadata.
