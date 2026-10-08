@@ -11,12 +11,14 @@ Academic Data Mining project (TI-3A) building Python scripts to extract YouTube 
 ## Commands
 - Install: `pip install -r Youtube_Data_Collection_API/requirements.txt`
 - Run: `python Youtube_Data_Collection_API/main.py --input-csv Youtube_Data_Collection_API/input_videos_template.csv`
+- Preprocess: `python data_preprocessing.py`
 - Test: `pytest Youtube_Data_Collection_API/test_collector.py`
 
 ## Structure map (top-level only, 1 line per folder)
 - `SKILL.md` — AI context management rules
-- `informasi/` — Lecture notes (materi/) and preprocessing analysis/roadmap (catatan/)
-- `ppt/` — Course lecture slides/books and sanitized Markdown study notes
+- `data/` — Raw datasets (`data/raw/`) and preprocessed outputs (`data/processed/`)
+- `informasi/` — Lecture notes (`materi/`) and preprocessing analysis/roadmap (`catatan/`)
+- `data_preprocessing.py` — 100% Data preprocessing pipeline script
 - `Youtube_Data_Collection_API/` — YouTube Data API v3 & RYD data collection implementation
 
 ## Conventions that differ from defaults / can't be inferred
@@ -32,6 +34,7 @@ Academic Data Mining project (TI-3A) building Python scripts to extract YouTube 
 - Disabled comments or private videos must be handled gracefully without script failure.
 
 ## Changelog (newest first, 1 line per entry, NOT a diff)
+- 2026-10-08: Built and executed 100% data preprocessing pipeline in data_preprocessing.py into data/processed/.
 - 2026-10-08: Documented dataset defense strategy and preprocessing action plan in informasi/catatan/.
 - 2026-10-08: Generated sanitized Markdown study notes for Week 01-04 in ppt/ without internal/personal metadata.
 - 2026-10-07: Added channel_video attribute support across input CSV parser, collector, and output dataset.

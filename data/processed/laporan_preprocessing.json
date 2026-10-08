@@ -1,0 +1,121 @@
+{
+  "komentar": {
+    "raw_total": 5284,
+    "null_dropped": 4,
+    "empty_after_cleaning_dropped": 73,
+    "clean_total": 5207,
+    "privacy_anonymized": true,
+    "sample_comparisons": [
+      {
+        "raw": "Dewasa di tahun yang salah😢",
+        "clean": "dewasa di tahun yang salah"
+      },
+      {
+        "raw": "6:38 stikerin miror coy yang kayak lampu hazard wjwkwkwk😂",
+        "clean": "stikerin miror coy yang kayak lampu hazard wjwkwkwk"
+      },
+      {
+        "raw": "Hei apa ini 3:42",
+        "clean": "hei apa ini"
+      },
+      {
+        "raw": "Tumben kagak ada iklan",
+        "clean": "tumben kagak ada iklan"
+      },
+      {
+        "raw": "6:17 \" udah kayak di kota silent hill anj \"",
+        "clean": "udah kayak di kota silent hill anj"
+      }
+    ]
+  },
+  "video": {
+    "raw_total": 55,
+    "clean_total": 55,
+    "outlier_views_stats": {
+      "q1": 239644.5,
+      "q3": 608099.5,
+      "iqr": 368455.0,
+      "lower_bound": -313038.0,
+      "upper_bound": 1160782.0,
+      "outlier_count": 3
+    },
+    "outlier_likes_stats": {
+      "q1": 5552.5,
+      "q3": 20308.0,
+      "iqr": 14755.5,
+      "lower_bound": -16580.75,
+      "upper_bound": 42441.25,
+      "outlier_count": 6
+    },
+    "normalized_features": [
+      "view_count",
+      "like_count",
+      "dislike_count_est",
+      "comment_count",
+      "engagement_rate",
+      "views_per_day"
+    ],
+    "scaling_summary": {
+      "view_count": {
+        "raw_min": 5622.0,
+        "raw_max": 6192423.0,
+        "raw_mean": 643882.58,
+        "minmax_range": [
+          0.0,
+          1.0
+        ],
+        "zscore_mean": -0.0
+      },
+      "like_count": {
+        "raw_min": 4.0,
+        "raw_max": 130942.0,
+        "raw_mean": 17394.09,
+        "minmax_range": [
+          0.0,
+          1.0
+        ],
+        "zscore_mean": 0.0
+      },
+      "dislike_count_est": {
+        "raw_min": 0.0,
+        "raw_max": 2612.0,
+        "raw_mean": 154.44,
+        "minmax_range": [
+          0.0,
+          1.0
+        ],
+        "zscore_mean": -0.0
+      },
+      "comment_count": {
+        "raw_min": 27.0,
+        "raw_max": 17449.0,
+        "raw_mean": 2475.16,
+        "minmax_range": [
+          0.0,
+          1.0
+        ],
+        "zscore_mean": 0.0
+      },
+      "engagement_rate": {
+        "raw_min": 0.504133,
+        "raw_max": 6.247534,
+        "raw_mean": 3.1,
+        "minmax_range": [
+          0.0,
+          1.0
+        ],
+        "zscore_mean": 0.0
+      },
+      "views_per_day": {
+        "raw_min": 120.6801,
+        "raw_max": 353538.965,
+        "raw_mean": 13602.34,
+        "minmax_range": [
+          0.0,
+          1.0
+        ],
+        "zscore_mean": -0.0
+      }
+    }
+  }
+}
