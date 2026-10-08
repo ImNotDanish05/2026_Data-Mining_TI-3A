@@ -15,6 +15,7 @@ Academic Data Mining project (TI-3A) building Python scripts to extract YouTube 
 
 ## Structure map (top-level only, 1 line per folder)
 - `SKILL.md` — AI context management rules
+- `ppt/` — Course lecture slides/books and sanitized Markdown study notes
 - `Youtube_Data_Collection_API/` — YouTube Data API v3 & RYD data collection implementation
 
 ## Conventions that differ from defaults / can't be inferred
@@ -30,6 +31,7 @@ Academic Data Mining project (TI-3A) building Python scripts to extract YouTube 
 - Disabled comments or private videos must be handled gracefully without script failure.
 
 ## Changelog (newest first, 1 line per entry, NOT a diff)
+- 2026-10-08: Generated sanitized Markdown study notes for Week 01-04 in ppt/ without internal/personal metadata.
 - 2026-10-07: Added channel_video attribute support across input CSV parser, collector, and output dataset.
 - 2026-10-07: Initial setup of collector, CLI, input CSV template, and test suite.
 
