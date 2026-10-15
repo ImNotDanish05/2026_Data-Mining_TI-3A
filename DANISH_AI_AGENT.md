@@ -33,6 +33,12 @@ Presentation Deadline: Thursday, 22 October 2026.
 - Output: Clean CSV files in data/raw/ and data/processed/ (video, komentar, transkrip) with cleaned tabs/newlines.
 - Summary column in dataset_video_clean.csv must contain no commas and no double-quotes to keep naive CSV split safe.
 
+## Next milestone (Presentation: 22 Oct 2026)
+- Training architecture & workflow documented in `informasi/catatan/rencana_dan_alur_training_model.md`.
+- Build baseline ML training script (`train_sentiment_models.py`) for Naïve Bayes & Linear SVM with TF-IDF.
+- Generate performance benchmark table (Accuracy, Precision, Recall, F1) vs Indo-RoBERTa & Confusion Matrix.
+- Prepare slide presentation & visualizations.
+
 ## DO NOT touch
 - `.env` (contains sensitive `YOUTUBE_API_KEY`)
 
@@ -41,6 +47,7 @@ Presentation Deadline: Thursday, 22 October 2026.
 - Disabled comments or private videos must be handled gracefully without script failure.
 
 ## Changelog (newest first, 1 line per entry, NOT a diff)
+- 2026-10-15: Documented complete AI model training plan and workflow in informasi/catatan/rencana_dan_alur_training_model.md.
 - 2026-10-15: Selected Topic 1 as official topic approved by lecturer; scheduled presentation for 22 October 2026.
 - 2026-10-15: Compiled empirical evidence and academic defense guide for 100% preprocessing completion in informasi/catatan/bukti_dan_argumen_preprocessing_100_persen.md.
 - 2026-10-08: Documented 5 research topic proposals and methodologies in informasi/catatan/usulan_5_topik_penelitian.md.
