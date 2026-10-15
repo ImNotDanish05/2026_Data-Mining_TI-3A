@@ -19,7 +19,7 @@ Presentation Deadline: Thursday, 22 October 2026.
 
 ## Structure map (top-level only, 1 line per folder)
 - `SKILL.md` — AI context management rules
-- `data/` — Raw datasets (`data/raw/`) and preprocessed outputs (`data/processed/`)
+- `data/` — Raw (`data/raw/`), preprocessed (`data/processed/`), and sanitized public releases (`data/public/`)
 - `informasi/` — Lecture notes (`materi/`) and preprocessing analysis/roadmap (`catatan/`)
 - `models/` — Saved LDA models, dictionary, and transformer cache (gitignored)
 - `data_preprocessing.py` — 100% Data preprocessing pipeline script
@@ -49,6 +49,7 @@ Presentation Deadline: Thursday, 22 October 2026.
 - Disabled comments or private videos must be handled gracefully without script failure.
 
 ## Changelog (newest first, 1 line per entry, NOT a diff)
+- 2026-10-15: Duplicated sanitized 100% anonymized datasets into data/public/ (comments, video metadata, transcripts) and whitelisted in .gitignore for safe GitHub public release.
 - 2026-10-15: Documented full Indonesian statutory legal protections (UU Dikti, UU PDP, UU ITE, KUHP, UU Hak Cipta) in informasi/catatan/landasan_hukum_dan_perlindungan_peneliti.md and README.md.
 - 2026-10-15: Overhauled README.md for public repository release with strict legal, ethical, PPDM/UU PDP privacy, and political neutrality disclaimers.
 - 2026-10-15: Pivoted model architecture to Unsupervised NLP (LDA Topic Modeling) without labeling per lecturer requirement; documented in informasi/catatan/rencana_dan_alur_training_model.md.

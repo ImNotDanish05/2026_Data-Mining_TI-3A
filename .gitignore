@@ -26,9 +26,10 @@ venv.bak/
 *.swp
 *.swo
 
-# Datasets output (keep template file)
+# Datasets output (keep template file and public sanitized datasets)
 *.csv
 !input_videos_template.csv
+!data/public/*.csv
 
 # Local AI Models cache
 models/
