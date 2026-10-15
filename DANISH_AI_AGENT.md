@@ -54,6 +54,7 @@ Two-Tier Deliverables:
 - Disabled comments or private videos must be handled gracefully without script failure.
 
 ## Changelog (newest first, 1 line per entry, NOT a diff)
+- 2026-10-15: Generated formal national standard Word lab report (laporan/LAPORAN_PRAKTIKUM_DATA_MINING_TI3A.docx) with 4-3-3-3 cm margins, Times New Roman, and 4 embedded 300 DPI figures.
 - 2026-10-15: Documented dual-tier roadmap (Weekly Lab Report for 22 Oct vs 2 Journal Versions SINTA 3 & SINTA 2 for Pre-UAS) in informasi/catatan/roadmap_dan_target_luaran_praktikum_uas.md.
 - 2026-10-15: Executed Analisis_Data_Video_Topic_Modeling_LDA.ipynb in Colab end-to-end with 0 errors (K=2 optimal Cv=0.3911, descriptive stats, pyLDAvis, and zip exported).
 - 2026-10-15: Implemented analisis_komparasi_framing_sinta2.py proving highly significant cross-modal media framing effect (Chi-Square=212.4579, df=2, p<0.0001).
