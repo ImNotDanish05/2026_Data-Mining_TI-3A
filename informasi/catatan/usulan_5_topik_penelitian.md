@@ -22,30 +22,31 @@ Dokumen ini memuat 5 rancangan usulan topik penelitian untuk tugas mata kuliah *
    - 20 artikel jurnal ilmiah terakreditasi SINTA dan Scopus beserta DOI resmi.
 
 > 🏆 **STATUS TOPIK**: **PILIHAN RESMI DOSEN (APPROVED) ⭐⭐⭐⭐⭐**  
-> 📅 **TANGGAL PRESENTASI**: **Kamis, 22 Oktober 2026**
+> 📅 **TANGGAL PRESENTASI**: **Kamis, 22 Oktober 2026**  
+> ⚠️ **CATATAN KHUSUS DOSEN**: Dosen melarang keras penggunaan labeling (*no supervised labels*). Model diwajibkan menggunakan **Unsupervised NLP (Topic Modeling - LDA)** untuk menemukan tema dan isu secara mandiri dari data.
 
 ---
 
-## 🌟 1. Topik 1: Analisis Sentimen dan Polarisasi Sikap Warganet terhadap Kebijakan Makan Bergizi Gratis (MBG) Menggunakan Model Deep Learning Indo-RoBERTa & Komparasi Machine Learning
+## 🌟 1. Topik 1: Pemodelan Topik (Topic Modeling) Opini Publik terhadap Kebijakan Makan Bergizi Gratis (MBG) Menggunakan Algoritma Unsupervised NLP (Latent Dirichlet Allocation / LDA)
 
 ### A. Deskripsi & Konsep Utama
-Menganalisis kecenderungan sikap masyarakat Indonesia di media sosial YouTube terhadap implementasi kebijakan strategis nasional, khususnya program Makan Bergizi Gratis (MBG) dan kepemimpinan Prabowo Subianto. Penelitian ini mengeksplorasi polarisasi opini publik: mengapa sentimen kritis/penolakan mendominasi percakapan digital (**67,12%**) dan faktor apa saja yang melatarbelakangi penerimaan (**13,46%**) maupun penolakan tersebut.
+Menganalisis kecenderungan isu, kritik, dan aspirasi masyarakat Indonesia di kolom komentar YouTube terhadap program Makan Bergizi Gratis (MBG) secara **murni tanpa label (*Unsupervised NLP*)**. Model secara probabilistik membedah 5.207 komentar bersih untuk menemukan kelompok tema tersembunyi (*latent topics*) seperti isu kualitas/keamanan pangan, isu kebocoran anggaran/korupsi, serta isu prioritas pendidikan.
 
 ### B. Rumusan Masalah (Research Questions)
-1. Bagaimana distribusi sentimen masyarakat terhadap kebijakan program MBG di kolom komentar YouTube?
-2. Entitas, kata kunci, dan argumen apa saja yang paling sering muncul dalam kelompok komentar yang menolak (kontra) dibandingkan kelompok yang mendukung (pro)?
-3. Apakah tingkat keyakinan (*confidence score*) model Indo-RoBERTa konsisten dalam mengklasifikasikan komentar berbahasa Indonesia tidak baku (*slang*)?
+1. Topik-topik substantif dan klaster isu apa saja yang diekstraksi secara otomatis oleh algoritma Latent Dirichlet Allocation (LDA) dari 5.207 komentar masyarakat?
+2. Berapa proporsi distribusi pembicaraan publik pada masing-masing topik isu utama tersebut?
+3. Berdasarkan evaluasi *Topic Coherence Score ($C_v$)*, seberapa optimal jumlah topik ($K$) dalam merepresentasikan opini masyarakat secara kohesif?
 
 ### C. Atribut & Metodologi Data Mining
-- **Data yang Digunakan**: `dataset_komentar_labeled.csv` (5.207 komentar).
-- **Atribut Kunci**: `comment_text_clean`, `sentimen`, `confidence_score`, `comment_likes`, `topik_video`.
-- **Metode**: Natural Language Processing (NLP), Pretrained Transformer (*Indo-RoBERTa*), Analisis Frekuensi Kata (N-Gram / TF-IDF), Ekstraksi Asosiasi Kata Kunci.
-- **Visualisasi**: Diagram lingkaran distribusi sentimen, Word Cloud pro vs kontra, grafik batang perbandingan isu dominan.
+- **Data yang Digunakan**: `dataset_komentar_clean.csv` (5.207 komentar teks bersih, tanpa kolom label kelas).
+- **Atribut Kunci**: `comment_text_clean`, `comment_likes`, `topik_video`.
+- **Metode**: Natural Language Processing (NLP), N-Gram Tokenization, Indonesian Stopwords Filtering, Dictionary & Bag-of-Words (BoW) Corpus, Algoritma **Latent Dirichlet Allocation (LDA)**, Evaluasi *Topic Coherence ($C_v$)*.
+- **Visualisasi**: Peta semantik interaktif **pyLDAvis** (HTML browser), Diagram lingkaran proporsi topik isu, Word Cloud kata kunci per topik.
 
 ### D. Keunggulan Akademis di Depan Dosen
-- **Relevansi Sangat Tinggi**: Membahas isu kebijakan publik nasional paling hangat (2024–2026).
-- **Metode Mutakhir**: Menggunakan Transformer (*State-of-the-Art* NLP), bukan sekadar kamus leksikon kata baku manual.
-- **Tingkat Kesulitan**: ⭐⭐ (Rendah–Sedang; seluruh inferensi model dan data sudah 100% selesai diolah).
+- **Sesuai 100% dengan Arahan Dosen**: Murni tanpa pelabelan (*zero manual/pseudo labeling*), menjunjung tinggi integritas analisis data-driven.
+- **Kekuatan Teori Probabilistik**: Menggunakan model Bayesian hierarkis 3 tingkat (Dirichlet Prior) yang sangat berbobot untuk ujian Data Mining.
+- **Tingkat Kesulitan**: ⭐⭐ (Rendah–Sedang; data teks sudah bersih dan siap dikonversi ke Bag-of-Words).
 
 ---
 

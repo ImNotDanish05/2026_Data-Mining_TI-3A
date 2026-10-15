@@ -2,52 +2,54 @@
 > This file is for AI agents, not humans. Update after finishing every task. Read this BEFORE exploring other files.
 
 ## Overview
-Academic Data Mining project (TI-3A). Official chosen topic: Topic 1 (Sentiment & Media Framing Analysis on MBG Policy using Indo-RoBERTa & ML Benchmark).
+Academic Data Mining project (TI-3A). Official chosen topic: Topic 1 (Unsupervised NLP Topic Modeling on MBG YouTube Comments using Latent Dirichlet Allocation / LDA).
 Presentation Deadline: Thursday, 22 October 2026.
 
 ## Stack
 - Python 3.12+
-- Libraries: google-api-python-client, requests, pandas, isodate, python-dotenv, pytest
+- Libraries: google-api-python-client, requests, pandas, isodate, python-dotenv, pytest, gensim, pyLDAvis, scikit-learn
 
 ## Commands
 - Install: `pip install -r Youtube_Data_Collection_API/requirements.txt`
 - Run: `python Youtube_Data_Collection_API/main.py --input-csv Youtube_Data_Collection_API/input_videos_template.csv`
 - Preprocess: `python data_preprocessing.py`
 - Transcribe: `python fetch_youtube_transcripts.py`
-- Classify: `python classify_sentiment_indobert.py`
+- Topic Modeling (LDA): `python train_lda_topic_modeling.py`
 - Test: `pytest Youtube_Data_Collection_API/test_collector.py`
 
 ## Structure map (top-level only, 1 line per folder)
 - `SKILL.md` — AI context management rules
 - `data/` — Raw datasets (`data/raw/`) and preprocessed outputs (`data/processed/`)
 - `informasi/` — Lecture notes (`materi/`) and preprocessing analysis/roadmap (`catatan/`)
-- `models/` — Local Hugging Face transformer model cache (gitignored)
+- `models/` — Saved LDA models, dictionary, and transformer cache (gitignored)
 - `data_preprocessing.py` — 100% Data preprocessing pipeline script
 - `fetch_youtube_transcripts.py` — YouTube transcript extraction with auto-resume & VPN rotation
 - `classify_sentiment_indobert.py` — Local Indo-RoBERTa sentiment classifier for comments
 - `Youtube_Data_Collection_API/` — YouTube Data API v3 & RYD data collection implementation
 
 ## Conventions that differ from defaults / can't be inferred
+- STRICT: NO SUPERVISED LABELS. Lecturer strictly forbids manual/pseudo labeling. All model training MUST be Unsupervised NLP (Topic Modeling LDA).
 - Neutrality: scripts, logs, comments, and variable names must remain politically neutral and statistical.
 - Quota efficiency: never paginate comment replies; use `totalReplyCount` from `commentThreads`.
 - Output: Clean CSV files in data/raw/ and data/processed/ (video, komentar, transkrip) with cleaned tabs/newlines.
 - Summary column in dataset_video_clean.csv must contain no commas and no double-quotes to keep naive CSV split safe.
 
 ## Next milestone (Presentation: 22 Oct 2026)
-- Training architecture & workflow documented in `informasi/catatan/rencana_dan_alur_training_model.md`.
-- Build baseline ML training script (`train_sentiment_models.py`) for Naïve Bayes & Linear SVM with TF-IDF.
-- Generate performance benchmark table (Accuracy, Precision, Recall, F1) vs Indo-RoBERTa & Confusion Matrix.
-- Prepare slide presentation & visualizations.
+- Unsupervised NLP architecture documented in `informasi/catatan/rencana_dan_alur_training_model.md`.
+- Build LDA script (`train_lda_topic_modeling.py`) with Indonesian stopwords filtering, Dictionary/Corpus, and Coherence Score tuning ($C_v$).
+- Export interactive pyLDAvis HTML (`visualisasi_lda_interaktif.html`) and topic distribution plots.
+- Prepare slide presentation for 22 Oct 2026.
 
 ## DO NOT touch
 - `.env` (contains sensitive `YOUTUBE_API_KEY`)
+- `data/processed/dataset_komentar_labeled.csv` (CRITICAL: DO NOT DELETE OR OVERWRITE! Contains valuable 5,207 Indo-RoBERTa sentiment labels classified earlier; preserve as backup/validation asset even though current training uses unsupervised LDA).
 
 ## Known gotchas
 - RYD API (`returnyoutubedislikeapi.com`) may fail or return null; fallback `dislike_count_est` to 0.
 - Disabled comments or private videos must be handled gracefully without script failure.
 
 ## Changelog (newest first, 1 line per entry, NOT a diff)
-- 2026-10-15: Documented complete AI model training plan and workflow in informasi/catatan/rencana_dan_alur_training_model.md.
+- 2026-10-15: Pivoted model architecture to Unsupervised NLP (LDA Topic Modeling) without labeling per lecturer requirement; documented in informasi/catatan/rencana_dan_alur_training_model.md.
 - 2026-10-15: Selected Topic 1 as official topic approved by lecturer; scheduled presentation for 22 October 2026.
 - 2026-10-15: Compiled empirical evidence and academic defense guide for 100% preprocessing completion in informasi/catatan/bukti_dan_argumen_preprocessing_100_persen.md.
 - 2026-10-08: Documented 5 research topic proposals and methodologies in informasi/catatan/usulan_5_topik_penelitian.md.
