@@ -2,7 +2,8 @@
 > This file is for AI agents, not humans. Update after finishing every task. Read this BEFORE exploring other files.
 
 ## Overview
-Academic Data Mining project (TI-3A) building Python scripts to extract YouTube Data API v3 and Return YouTube Dislike (RYD) API data into primary analysis datasets.
+Academic Data Mining project (TI-3A). Official chosen topic: Topic 1 (Sentiment & Media Framing Analysis on MBG Policy using Indo-RoBERTa & ML Benchmark).
+Presentation Deadline: Thursday, 22 October 2026.
 
 ## Stack
 - Python 3.12+
@@ -40,6 +41,8 @@ Academic Data Mining project (TI-3A) building Python scripts to extract YouTube 
 - Disabled comments or private videos must be handled gracefully without script failure.
 
 ## Changelog (newest first, 1 line per entry, NOT a diff)
+- 2026-10-15: Selected Topic 1 as official topic approved by lecturer; scheduled presentation for 22 October 2026.
+- 2026-10-15: Compiled empirical evidence and academic defense guide for 100% preprocessing completion in informasi/catatan/bukti_dan_argumen_preprocessing_100_persen.md.
 - 2026-10-08: Documented 5 research topic proposals and methodologies in informasi/catatan/usulan_5_topik_penelitian.md.
 - 2026-10-08: Classified 5,207 comments using local Indo-RoBERTa model into data/processed/dataset_komentar_labeled.csv (88.7% confidence).
 - 2026-10-08: Completed summary for all 55 videos in data/processed/dataset_video_clean.csv with neutral comma-free summaries.

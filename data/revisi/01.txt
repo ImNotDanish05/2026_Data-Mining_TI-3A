@@ -1,0 +1,6 @@
+1. Berapa jumlah video (dari video apa saja, apa yang kamu lakukan, dll)
+
+Prompt:
+Kira2 algoritma apa yang cocok untuk data mining dari dataset yang saya miliki
+
+2. Nanti akan dibuat model AINya

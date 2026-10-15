@@ -21,9 +21,12 @@ Dokumen ini memuat 5 rancangan usulan topik penelitian untuk tugas mata kuliah *
 4. **Landasan Teoretis & Akademis (`informasi/catatan/daftar_20_jurnal_pendukung.md`)**:
    - 20 artikel jurnal ilmiah terakreditasi SINTA dan Scopus beserta DOI resmi.
 
+> 🏆 **STATUS TOPIK**: **PILIHAN RESMI DOSEN (APPROVED) ⭐⭐⭐⭐⭐**  
+> 📅 **TANGGAL PRESENTASI**: **Kamis, 22 Oktober 2026**
+
 ---
 
-## 1. Topik 1: Analisis Sentimen dan Polarisasi Sikap Warganet terhadap Kebijakan Makan Bergizi Gratis (MBG) Menggunakan Model Deep Learning Indo-RoBERTa
+## 🌟 1. Topik 1: Analisis Sentimen dan Polarisasi Sikap Warganet terhadap Kebijakan Makan Bergizi Gratis (MBG) Menggunakan Model Deep Learning Indo-RoBERTa & Komparasi Machine Learning
 
 ### A. Deskripsi & Konsep Utama
 Menganalisis kecenderungan sikap masyarakat Indonesia di media sosial YouTube terhadap implementasi kebijakan strategis nasional, khususnya program Makan Bergizi Gratis (MBG) dan kepemimpinan Prabowo Subianto. Penelitian ini mengeksplorasi polarisasi opini publik: mengapa sentimen kritis/penolakan mendominasi percakapan digital (**67,12%**) dan faktor apa saja yang melatarbelakangi penerimaan (**13,46%**) maupun penolakan tersebut.
