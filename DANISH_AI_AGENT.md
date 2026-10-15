@@ -49,6 +49,7 @@ Presentation Deadline: Thursday, 22 October 2026.
 - Disabled comments or private videos must be handled gracefully without script failure.
 
 ## Changelog (newest first, 1 line per entry, NOT a diff)
+- 2026-10-15: Overhauled README.md for public repository release with strict legal, ethical, PPDM/UU PDP privacy, and political neutrality disclaimers.
 - 2026-10-15: Pivoted model architecture to Unsupervised NLP (LDA Topic Modeling) without labeling per lecturer requirement; documented in informasi/catatan/rencana_dan_alur_training_model.md.
 - 2026-10-15: Selected Topic 1 as official topic approved by lecturer; scheduled presentation for 22 October 2026.
 - 2026-10-15: Compiled empirical evidence and academic defense guide for 100% preprocessing completion in informasi/catatan/bukti_dan_argumen_preprocessing_100_persen.md.
