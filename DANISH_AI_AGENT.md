@@ -3,11 +3,13 @@
 
 ## Overview
 Academic Data Mining project (TI-3A). Official chosen topic: Topic 1 (Unsupervised NLP Topic Modeling on MBG YouTube Comments using Latent Dirichlet Allocation / LDA).
-Presentation Deadline: Thursday, 22 October 2026.
+Two-Tier Deliverables:
+1. Target 1 (22 Oct 2026): Lab Report (Laporan Praktikum fulfilling Bab I-V of TUGAS PRAKTIKUM DATA MINING.docx) + Presentation Slide Deck.
+2. Target 2 (Pre-UAS): Two academic journal articles (Artikel Jurnal Ilmiah): SINTA 3 version (Unsupervised LDA baseline) and SINTA 2 version (Elevated Cross-Modal Media Framing & Chi-Square test).
 
 ## Stack
 - Python 3.12+
-- Libraries: google-api-python-client, requests, pandas, isodate, python-dotenv, pytest, gensim, pyLDAvis, scikit-learn
+- Libraries: google-api-python-client, requests, pandas, isodate, python-dotenv, pytest, gensim, pyLDAvis, scikit-learn, scipy, matplotlib, seaborn
 
 ## Commands
 - Install: `pip install -r Youtube_Data_Collection_API/requirements.txt`
@@ -15,6 +17,7 @@ Presentation Deadline: Thursday, 22 October 2026.
 - Preprocess: `python data_preprocessing.py`
 - Transcribe: `python fetch_youtube_transcripts.py`
 - Topic Modeling (LDA): `python train_lda_topic_modeling.py`
+- SINTA 2 Comparative Framing: `python analisis_komparasi_framing_sinta2.py`
 - Test: `pytest Youtube_Data_Collection_API/test_collector.py`
 
 ## Structure map (top-level only, 1 line per folder)
@@ -35,11 +38,11 @@ Presentation Deadline: Thursday, 22 October 2026.
 - Output: Clean CSV files in data/raw/ and data/processed/ (video, komentar, transkrip) with cleaned tabs/newlines.
 - Summary column in dataset_video_clean.csv must contain no commas and no double-quotes to keep naive CSV split safe.
 
-## Next milestone (Presentation: 22 Oct 2026)
-- Unsupervised NLP architecture documented in `informasi/catatan/rencana_dan_alur_training_model.md`.
-- Build LDA script (`train_lda_topic_modeling.py`) with Indonesian stopwords filtering, Dictionary/Corpus, and Coherence Score tuning ($C_v$).
-- Export interactive pyLDAvis HTML (`visualisasi_lda_interaktif.html`) and topic distribution plots.
-- Prepare slide presentation for 22 Oct 2026.
+## Next milestone (Weekly Presentation & Lab Report: 22 Oct 2026; Journals: Pre-UAS)
+- Milestone 1 (22 Oct 2026): Draft complete Lab Report (Laporan Praktikum) answering Bab I-V of assignment sheet.
+- Milestone 1 (22 Oct 2026): Prepare Presentation Slide Deck for lecture presentation.
+- Milestone 2 (Pre-UAS): Draft SINTA 3 journal article (Unsupervised LDA topic modeling on 5,207 comments).
+- Milestone 2 (Pre-UAS): Draft SINTA 2 journal article (Cross-modal framing Meme vs News vs Serious + Chi-Square test).
 
 ## DO NOT touch
 - `.env` (contains sensitive `YOUTUBE_API_KEY`)
@@ -51,6 +54,9 @@ Presentation Deadline: Thursday, 22 October 2026.
 - Disabled comments or private videos must be handled gracefully without script failure.
 
 ## Changelog (newest first, 1 line per entry, NOT a diff)
+- 2026-10-15: Documented dual-tier roadmap (Weekly Lab Report for 22 Oct vs 2 Journal Versions SINTA 3 & SINTA 2 for Pre-UAS) in informasi/catatan/roadmap_dan_target_luaran_praktikum_uas.md.
+- 2026-10-15: Executed Analisis_Data_Video_Topic_Modeling_LDA.ipynb in Colab end-to-end with 0 errors (K=2 optimal Cv=0.3911, descriptive stats, pyLDAvis, and zip exported).
+- 2026-10-15: Implemented analisis_komparasi_framing_sinta2.py proving highly significant cross-modal media framing effect (Chi-Square=212.4579, df=2, p<0.0001).
 - 2026-10-15: Added informasi/catatan_pribadi/ and *.docx to .gitignore and protected in DO NOT touch to prevent accidental upload to GitHub.
 - 2026-10-15: Duplicated sanitized 100% anonymized datasets into data/public/ (comments, video metadata, transcripts) and whitelisted in .gitignore for safe GitHub public release.
 - 2026-10-15: Documented full Indonesian statutory legal protections (UU Dikti, UU PDP, UU ITE, KUHP, UU Hak Cipta) in informasi/catatan/landasan_hukum_dan_perlindungan_peneliti.md and README.md.
