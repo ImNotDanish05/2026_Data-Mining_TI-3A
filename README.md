@@ -27,7 +27,25 @@ Repositori ini memuat implementasi proyek akademis praktikum dan riset **Data Mi
 >    - Repositori ini **tidak mengumpulkan, tidak menyimpan, dan tidak menyebarkan data pribadi sensitif (*PII - Personally Identifiable Information*)** apa pun, serta bebas dari praktik *doxxing* atau pelanggaran hukum siber.
 >
 > 4. **Penafian Tanggung Jawab Isi Komentar (*User-Generated Content Liability Waiver*):**
->    Seluruh opini, sentimen, atau pernyataan yang tertuang dalam teks komentar adalah **murni ekspresi individual dari masing-masing pengguna platform YouTube** dan **BUKAN merupakan pendapat, keyakinan, atau pernyataan dari penulis repositori ini**. Penulis tidak bertanggung jawab atas segala bentuk penafsiran keliru atau penyalahgunaan data oleh pihak ketiga di luar ranah pendidikan.
+>    Seluruh opini, sentimen, atau pernyataan yang tertuang dalam teks komentar adalah **murni ekspresi individual dari masing-masing pengguna platform YouTube** dan **BUKAN merupakan pendapat, keyakinan, atau pernyataan dari penulis repositori ini**. Penulis bertindak sebagai analis data komputasional, bukan pembuat maupun penyebar opini tersebut.
+
+### 🛡️ Perlindungan Hukum Positif Republik Indonesia untuk Riset Ini
+
+Proyek akademis ini dilindungi secara sah oleh perundang-undangan Republik Indonesia yang berlaku:
+
+1. **Jaminan Kebebasan Akademik (UU No. 12 Tahun 2012 tentang Pendidikan Tinggi - Pasal 8 & 9):**
+   * Memberikan perlindungan hukum penuh atas **Kebebasan Akademik, Kebebasan Mimbar Akademik, dan Otonomi Keilmuan** bagi civitas akademika dalam melakukan penelitian ilmiah, menganalisis fenomena sosial, dan mempublikasikan temuan akademik secara bertanggung jawab.
+2. **Pengecualian Penelitian Ilmiah & Anonimisasi (UU No. 27 Tahun 2022 tentang Pelindungan Data Pribadi - UU PDP):**
+   * **Pasal 15 ayat (1) huruf f**: Menegaskan pengecualian pemrosesan data pribadi untuk **kepentingan statistik dan penelitian ilmiah**.
+   * Dengan diterapkannya teknik **Anonimisasi Mutlak** (penghapusan kolom `author`), data teks dalam dataset ini secara hukum tidak lagi tergolong sebagai Data Pribadi yang dapat mengidentifikasi individu secara langsung.
+3. **Pengecualian Kepentingan Umum (UU No. 1 Tahun 2024 tentang Perubahan Kedua UU ITE - Pasal 27A & Penjelasan Resmi):**
+   * Penjelasan resmi Pasal 27A UU ITE secara tegas menyatakan bahwa telaah, kritik, dan evaluasi atas kebijakan publik demi **kepentingan umum BUKAN merupakan tindak pidana pencemaran nama baik**. Peneliti tidak memproduksi konten melainkan meneliti korpus data sekunder.
+4. **Kritik Kebijakan Bukan Tindak Pidana (UU No. 1 Tahun 2023 tentang KUHP - Pasal 218 ayat 2 & Pasal 240 ayat 2):**
+   * Menegaskan bahwa evaluasi atau kritik terhadap kebijakan pemerintah demi kepentingan umum atau kajian keilmuan **tidak dapat dipidana**.
+5. **Doktrin Penggunaan Wajar Karya (UU No. 28 Tahun 2014 tentang Hak Cipta - Pasal 44 ayat 1 huruf a):**
+   * Penggunaan dan analisis data teks publik untuk keperluan **pendidikan, penelitian, dan karya ilmiah** dengan mencantumkan sumber secara lengkap **tidak dianggap sebagai pelanggaran hak cipta**.
+6. **Kepatuhan Akses Siber (Pasal 30–32 UU ITE):**
+   * Pengambilan data dilakukan secara sah menggunakan kredensial resmi **YouTube Data API v3** dari Google LLC, bukan melalui peretasan (*hacking*), intersepsi ilegal, atau pembobolan sistem.
 
 ---
 
