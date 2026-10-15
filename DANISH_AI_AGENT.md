@@ -42,6 +42,7 @@ Presentation Deadline: Thursday, 22 October 2026.
 
 ## DO NOT touch
 - `.env` (contains sensitive `YOUTUBE_API_KEY`)
+- `informasi/catatan_pribadi/` (User's private notes and assignments — strictly gitignored and never pushed to GitHub)
 - `data/processed/dataset_komentar_labeled.csv` (CRITICAL: DO NOT DELETE OR OVERWRITE! Contains valuable 5,207 Indo-RoBERTa sentiment labels classified earlier; preserve as backup/validation asset even though current training uses unsupervised LDA).
 
 ## Known gotchas
@@ -49,6 +50,7 @@ Presentation Deadline: Thursday, 22 October 2026.
 - Disabled comments or private videos must be handled gracefully without script failure.
 
 ## Changelog (newest first, 1 line per entry, NOT a diff)
+- 2026-10-15: Added informasi/catatan_pribadi/ and *.docx to .gitignore and protected in DO NOT touch to prevent accidental upload to GitHub.
 - 2026-10-15: Duplicated sanitized 100% anonymized datasets into data/public/ (comments, video metadata, transcripts) and whitelisted in .gitignore for safe GitHub public release.
 - 2026-10-15: Documented full Indonesian statutory legal protections (UU Dikti, UU PDP, UU ITE, KUHP, UU Hak Cipta) in informasi/catatan/landasan_hukum_dan_perlindungan_peneliti.md and README.md.
 - 2026-10-15: Overhauled README.md for public repository release with strict legal, ethical, PPDM/UU PDP privacy, and political neutrality disclaimers.

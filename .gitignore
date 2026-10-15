@@ -31,5 +31,9 @@ venv.bak/
 !input_videos_template.csv
 !data/public/*.csv
 
+# Private notes & personal documents
+informasi/catatan_pribadi/
+*.docx
+
 # Local AI Models cache
 models/
