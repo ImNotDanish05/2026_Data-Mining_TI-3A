@@ -23,6 +23,7 @@ Presentation Deadline: Thursday, 22 October 2026.
 - `informasi/` — Lecture notes (`materi/`) and preprocessing analysis/roadmap (`catatan/`)
 - `models/` — Saved LDA models, dictionary, and transformer cache (gitignored)
 - `data_preprocessing.py` — 100% Data preprocessing pipeline script
+- `analisis_komparasi_framing_sinta2.py` — SINTA 2 cross-modal comparative media framing analysis (Cross-tab & Chi-Square)
 - `fetch_youtube_transcripts.py` — YouTube transcript extraction with auto-resume & VPN rotation
 - `classify_sentiment_indobert.py` — Local Indo-RoBERTa sentiment classifier for comments
 - `Youtube_Data_Collection_API/` — YouTube Data API v3 & RYD data collection implementation
