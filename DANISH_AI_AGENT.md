@@ -59,6 +59,7 @@ Two-Tier Deliverables:
 - Disabled comments or private videos must be handled gracefully without script failure.
 
 ## Changelog (newest first, 1 line per entry, NOT a diff)
+- 2026-10-16: Expanded literature references to 40 verified journals in informasi/catatan/daftar_40_jurnal_pendukung.md with specific SINTA 2 elevation notes.
 - 2026-10-16: Modernized website/index.html UI with centered responsive container, fixed SVG left circle clipping, and added topic guide without touching data.
 - 2026-10-16: Injected transparent Polines logo, 4 empirical PNG figures, and Indonesian speaker notes into ppt/Analisis Opini Publik MBG - Data Mining TI-3A.pptx.
 - 2026-10-16: Built 12-slide executive presentation ppt/PRESENTASI_DATA_MINING_TI3A.pptx with 4 embedded PNG charts, 2D PCoA cluster map, and Indonesian presenter notes.
