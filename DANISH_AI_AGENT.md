@@ -18,6 +18,7 @@ Two-Tier Deliverables:
 - Transcribe: `python fetch_youtube_transcripts.py`
 - Topic Modeling (LDA): `python train_lda_topic_modeling.py`
 - SINTA 2 Comparative Framing: `python analisis_komparasi_framing_sinta2.py`
+- Presentation Deck (PPTX): `python create_presentation.py`
 - Test: `pytest Youtube_Data_Collection_API/test_collector.py`
 
 ## Structure map (top-level only, 1 line per folder)
@@ -25,7 +26,10 @@ Two-Tier Deliverables:
 - `data/` — Raw (`data/raw/`), preprocessed (`data/processed/`), and sanitized public releases (`data/public/`)
 - `informasi/` — Lecture notes (`materi/`) and preprocessing analysis/roadmap (`catatan/`)
 - `models/` — Saved LDA models, dictionary, and transformer cache (gitignored)
+- `ppt/` — Presentation deck (`Analisis Opini Publik MBG - Data Mining TI-3A.pptx`) & Polines logo
+- `laporan/` — Word report (`.docx`, `.md`) and 4 high-res PNG figures (`gambar/`)
 - `data_preprocessing.py` — 100% Data preprocessing pipeline script
+- `update_user_presentation.py` — Script injecting Polines logo, 4 charts, and speaker notes into presentation
 - `analisis_komparasi_framing_sinta2.py` — SINTA 2 cross-modal comparative media framing analysis (Cross-tab & Chi-Square)
 - `fetch_youtube_transcripts.py` — YouTube transcript extraction with auto-resume & VPN rotation
 - `classify_sentiment_indobert.py` — Local Indo-RoBERTa sentiment classifier for comments
@@ -54,6 +58,8 @@ Two-Tier Deliverables:
 - Disabled comments or private videos must be handled gracefully without script failure.
 
 ## Changelog (newest first, 1 line per entry, NOT a diff)
+- 2026-10-16: Injected transparent Polines logo, 4 empirical PNG figures, and Indonesian speaker notes into ppt/Analisis Opini Publik MBG - Data Mining TI-3A.pptx.
+- 2026-10-16: Built 12-slide executive presentation ppt/PRESENTASI_DATA_MINING_TI3A.pptx with 4 embedded PNG charts, 2D PCoA cluster map, and Indonesian presenter notes.
 - 2026-10-15: Generated formal national standard Word lab report (laporan/LAPORAN_PRAKTIKUM_DATA_MINING_TI3A.docx) with 4-3-3-3 cm margins, Times New Roman, and 4 embedded 300 DPI figures.
 - 2026-10-15: Documented dual-tier roadmap (Weekly Lab Report for 22 Oct vs 2 Journal Versions SINTA 3 & SINTA 2 for Pre-UAS) in informasi/catatan/roadmap_dan_target_luaran_praktikum_uas.md.
 - 2026-10-15: Executed Analisis_Data_Video_Topic_Modeling_LDA.ipynb in Colab end-to-end with 0 errors (K=2 optimal Cv=0.3911, descriptive stats, pyLDAvis, and zip exported).

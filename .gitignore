@@ -34,6 +34,8 @@ venv.bak/
 # Private notes & personal documents
 informasi/catatan_pribadi/
 *.docx
+laporan/*
+ppt/*
 
 # Local AI Models cache
 models/
