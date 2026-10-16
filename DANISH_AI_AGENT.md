@@ -27,6 +27,7 @@ Two-Tier Deliverables:
 - `informasi/` — Lecture notes (`materi/`) and preprocessing analysis/roadmap (`catatan/`)
 - `models/` — Saved LDA models, dictionary, and transformer cache (gitignored)
 - `ppt/` — Presentation deck (`Analisis Opini Publik MBG - Data Mining TI-3A.pptx`) & Polines logo
+- `website/` — Interactive pyLDAvis topic modeling web dashboard (`index.html`)
 - `laporan/` — Word report (`.docx`, `.md`) and 4 high-res PNG figures (`gambar/`)
 - `data_preprocessing.py` — 100% Data preprocessing pipeline script
 - `update_user_presentation.py` — Script injecting Polines logo, 4 charts, and speaker notes into presentation
@@ -58,6 +59,7 @@ Two-Tier Deliverables:
 - Disabled comments or private videos must be handled gracefully without script failure.
 
 ## Changelog (newest first, 1 line per entry, NOT a diff)
+- 2026-10-16: Modernized website/index.html UI with centered responsive container, fixed SVG left circle clipping, and added topic guide without touching data.
 - 2026-10-16: Injected transparent Polines logo, 4 empirical PNG figures, and Indonesian speaker notes into ppt/Analisis Opini Publik MBG - Data Mining TI-3A.pptx.
 - 2026-10-16: Built 12-slide executive presentation ppt/PRESENTASI_DATA_MINING_TI3A.pptx with 4 embedded PNG charts, 2D PCoA cluster map, and Indonesian presenter notes.
 - 2026-10-15: Generated formal national standard Word lab report (laporan/LAPORAN_PRAKTIKUM_DATA_MINING_TI3A.docx) with 4-3-3-3 cm margins, Times New Roman, and 4 embedded 300 DPI figures.
