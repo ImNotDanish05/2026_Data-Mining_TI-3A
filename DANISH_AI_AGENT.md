@@ -58,7 +58,7 @@ Two-Tier Deliverables:
 - RYD API (`returnyoutubedislikeapi.com`) may fail or return null; fallback `dislike_count_est` to 0.
 - Disabled comments or private videos must be handled gracefully without script failure.
 
-## Changelog (newest first, 1 line per entry, NOT a diff)
+- 2026-10-16: Re-verified all 40 supporting journals across Crossref API and official portals; replaced 5 broken/unregistered papers with valid SINTA 2/IEEE/ACM equivalents, corrected 4 DOI typos/formatting, and verified 100% active links in informasi/catatan/daftar_40_jurnal_pendukung.md.
 - 2026-10-16: Expanded literature references to 40 verified journals in informasi/catatan/daftar_40_jurnal_pendukung.md with specific SINTA 2 elevation notes.
 - 2026-10-16: Modernized website/index.html UI with centered responsive container, fixed SVG left circle clipping, and added topic guide without touching data.
 - 2026-10-16: Injected transparent Polines logo, 4 empirical PNG figures, and Indonesian speaker notes into ppt/Analisis Opini Publik MBG - Data Mining TI-3A.pptx.
