@@ -28,7 +28,7 @@ Two-Tier Deliverables:
 - `models/` — Saved LDA models, dictionary, and transformer cache (gitignored)
 - `ppt/` — Presentation deck (`Analisis Opini Publik MBG - Data Mining TI-3A.pptx`) & Polines logo
 - `website/` — Interactive pyLDAvis topic modeling web dashboard (`index.html`)
-- `laporan/` — Word report (`.docx`, `.md`) and 4 high-res PNG figures (`gambar/`)
+- `laporan/` — Word report & journals (`.docx`, `.md`) and 4 high-res PNG figures (`gambar/`)
 - `data_preprocessing.py` — 100% Data preprocessing pipeline script
 - `update_user_presentation.py` — Script injecting Polines logo, 4 charts, and speaker notes into presentation
 - `analisis_komparasi_framing_sinta2.py` — SINTA 2 cross-modal comparative media framing analysis (Cross-tab & Chi-Square)
@@ -58,6 +58,7 @@ Two-Tier Deliverables:
 - RYD API (`returnyoutubedislikeapi.com`) may fail or return null; fallback `dislike_count_est` to 0.
 - Disabled comments or private videos must be handled gracefully without script failure.
 
+- 2026-10-17: Documented ARJUNA SINTA 2 & 3 criteria and comprehensive DOCX typography blueprint (fonts, margins, hex colors, three-line tables, equations, references) in informasi/catatan/standar_dan_syarat_jurnal_sinta2_sinta3.md; built publication-ready SINTA 3 & SINTA 2 Word articles in laporan/.
 - 2026-10-16: Expanded to 42 supporting journals in informasi/catatan/daftar_40_jurnal_pendukung.md; preserved original bot-checked SINTA 2 journals (JUITA & JANAPATI) alongside RESTI additions, with resolved UGM JNTETI migration & RESTI DNS links.
 - 2026-10-16: Expanded literature references to 40 verified journals in informasi/catatan/daftar_40_jurnal_pendukung.md with specific SINTA 2 elevation notes.
 - 2026-10-16: Modernized website/index.html UI with centered responsive container, fixed SVG left circle clipping, and added topic guide without touching data.
