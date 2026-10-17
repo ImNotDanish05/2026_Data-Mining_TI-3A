@@ -57,7 +57,8 @@ Two-Tier Deliverables:
 ## Known gotchas
 - RYD API (`returnyoutubedislikeapi.com`) may fail or return null; fallback `dislike_count_est` to 0.
 - Disabled comments or private videos must be handled gracefully without script failure.
-
+- 2026-10-17: Configured official authorship (ImNotDanish05 as primary/corresponding author) across SINTA 2 & SINTA 3 Word and Markdown publications in laporan/.
+- 2026-10-17: Generated complete publication-ready Markdown journal articles (laporan/ARTIKEL_JURNAL_SINTA3_TI3A.md and laporan/ARTIKEL_JURNAL_SINTA2_TI3A.md) featuring full IMRAD structures, KaTeX equations, formal three-line tables, all 4 embedded empirical proof figures, and complete verified IEEE reference lists with active DOIs.
 - 2026-10-17: Documented ARJUNA SINTA 2 & 3 criteria and comprehensive DOCX typography blueprint (fonts, margins, hex colors, three-line tables, equations, references) in informasi/catatan/standar_dan_syarat_jurnal_sinta2_sinta3.md; built publication-ready SINTA 3 & SINTA 2 Word articles in laporan/.
 - 2026-10-16: Expanded to 42 supporting journals in informasi/catatan/daftar_40_jurnal_pendukung.md; preserved original bot-checked SINTA 2 journals (JUITA & JANAPATI) alongside RESTI additions, with resolved UGM JNTETI migration & RESTI DNS links.
 - 2026-10-16: Expanded literature references to 40 verified journals in informasi/catatan/daftar_40_jurnal_pendukung.md with specific SINTA 2 elevation notes.
