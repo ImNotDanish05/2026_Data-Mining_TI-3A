@@ -37,6 +37,8 @@ Notebook and figures are 100% generated, executed, and validated. Ready for user
 - Meme/satir media packages strongly steer audiences toward concrete operational issues (61.4% Topik 0), whereas Serious/analysis packaging splits audience discussion evenly (57.9% vs 42.1%).
 
 ## Tried and failed (don't repeat)
+- Aggressive stopword filtering on substantive research terms (`mbg`, `makan`, `bergizi`, `gratis`, `program`, `anak`, `sekolah`, `rakyat`, `presiden`). NEVER DO THIS! Removing them ruins topic discovery. The dataset `dataset_komentar_clean.csv` is already 100% preprocessed by `data_preprocessing.py`.
+- Supervised labeling / manual sentiment labeling was rejected by the lecturer; all modeling must remain Unsupervised.
 - Avoid unconstrained coherence computation over high $K$ values without filtered dictionary (causes memory explosion and semantic drift).
 
 ## Open questions / waiting on the user

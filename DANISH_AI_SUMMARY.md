@@ -5,6 +5,10 @@
 ## Overview
 Academic Data Mining project (TI-3A) analyzing Indonesian public discourse on the "Makan Bergizi Gratis" (MBG) national policy from YouTube comments using Unsupervised NLP Topic Modeling (Latent Dirichlet Allocation / LDA). Primary target: Lab Report + Presentation (completed) and Pre-UAS SINTA 2 & SINTA 3 academic journal publications.
 
+## Must-know (DO NOT FORGET)
+- **Dataset is ALREADY 100% Preprocessed**: `data/processed/dataset_komentar_clean.csv` (`comment_text_clean`) has already undergone full preprocessing via `data_preprocessing.py` (free of URLs, mentions, emojis, timestamps, punctuation, numbers). DO NOT re-clean or apply destructive text filtering.
+- **NEVER FILTER OUT CORE TOPIC KEYWORDS**: Words like `mbg`, `makan`, `bergizi`, `gratis`, `program`, `sekolah`, `anak`, `rakyat`, `presiden`, `korupsi`, `keracunan` are the SUBSTANTIVE CORE of this research. NEVER add them to stopwords! Stopwords must strictly be limited to standard grammatical/slang connectors (`yang`, `di`, `dan`, `yg`, `sih`, `kok`). Filtered domain terms cause semantic collapse.
+
 ## Stack
 - Python 3.12.3 (in `.venv/`, use `.venv/bin/python3`)
 - Package manager: pip (use `.venv/bin/python3 -m pip`)

@@ -1,5 +1,11 @@
 # Decision Log
 
+### D-007 — Never Filter Core Domain Policy Keywords into Stopwords (2026-10-31)
+- Context: During multi-algorithm benchmarking, an attempt to treat frequent domain keywords (`mbg`, `makan`, `bergizi`, `gratis`, `program`, `anak`, `sekolah`) as domain stopwords stripped away the central research topic and degraded model coherence.
+- Decision: Retain all substantive policy terms in the vocabulary. Stopwords are strictly limited to structural/grammatical connectors. The dataset `dataset_komentar_clean.csv` is already 100% preprocessed and must not undergo destructive re-cleaning.
+- Rejected: Treating frequent domain nouns/verbs as stopwords (destroys policy topic discovery).
+- Revisit if: Never. Substantive domain terms are mandatory for the research findings.
+
 ### D-006 — Store confidential assignments & drafts in `informasi/catatan_pribadi/` (2026-10-15)
 - Context: University assignments, personal Word reports, and presentation slide decks contain student metadata and assignment prompts.
 - Decision: Place them in `informasi/catatan_pribadi/`, gitignore them completely, and protect them under "DO NOT touch".
