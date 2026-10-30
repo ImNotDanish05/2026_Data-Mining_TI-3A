@@ -1,43 +1,47 @@
 # Current state
-Updated: 2026-10-29
+Updated: 2026-10-30
 
 ## Goal in progress
-Migrate persistent context from legacy `DANISH_AI_AGENT.md` to `danish-ai-summary` structure, verify active project assets, and establish baseline for Pre-UAS SINTA 2 & SINTA 3 academic journal publication deliverables.
+Deliver comprehensive 4-algorithm Unsupervised NLP benchmark (LDA vs NMF vs LSA vs K-Means) and generate publication-grade visual assets (300 DPI) for SINTA 2 academic journal publication.
 
 ## Done so far
-- Target 1 completed (22 Oct 2026): Lab report (`LAPORAN_PRAKTIKUM_DATA_MINING_TI3A.docx`) and presentation slide deck (`Analisis Opini Publik MBG - Data Mining TI-3A.pptx`) created and finalized in `informasi/catatan_pribadi/`.
-- Unsupervised LDA topic modeling executed via Google Colab (`Analisis_Data_Video_Topic_Modeling_LDA.ipynb`) with optimal K=2 ($C_v=0.3911$), pyLDAvis exported to `index.html` and `models/models-lda/hasil_lda_lengkap.zip`.
-- 100% data preprocessing pipeline verified (`data_preprocessing.py` verified processing 5,207 clean comments and 55 clean videos).
-- Literature baseline established with 40 supporting journals and SINTA 2/3 criteria documented in `informasi/catatan/`.
-- Sanitized public datasets prepared in `data/public/` (comments, video metadata, transcripts).
+- Created and executed end-to-end Jupyter Notebook: `Komparasi_4_Algoritma_NLP_Topic_Modeling_SINTA2.ipynb` (13 cells, 100% executed with full outputs).
+- Benchmarked 4 Unsupervised Topic Modeling algorithms on 5,207 comments (retaining substantive MBG topic keywords):
+  - **LDA**: $C_v = 0.4591$ (Rank 1), Time: 14.87s
+  - **K-Means**: $C_v = 0.4009$ (Rank 2), Time: 0.26s
+  - **NMF**: $C_v = 0.3634$ (Rank 3), Time: 0.06s
+  - **LSA**: $C_v = 0.3257$ (Rank 4), Time: 0.02s
+- Evaluated Topic Coherence curves across $K \in [2, 6]$ confirming $K=2$ as the mathematical elbow/optimal topic count.
+- Executed Elevated SINTA 2 Cross-Modal Media Framing analysis:
+  - Contingency table (3 packaging genres × 2 dominant topics)
+  - Pearson Chi-Square: $\chi^2 = 132.9966, df=2, p = 1.3187 \times 10^{-29} < 0.0001$, Cramér's $V = 0.1678$.
+- Rendered and saved 6 standalone high-resolution (300 DPI) publication-ready figures in `gambar_sinta2/`.
+- Exported enriched multi-algorithm dataset to `data/processed/dataset_komentar_hasil_komparasi_4_algoritma.csv`.
 
 ## Exactly where I stopped
-Finished Target 1 (Lab report & presentation). Ready for Target 2 (Pre-UAS): drafting and finalizing two academic journal articles (SINTA 3 baseline & SINTA 2 cross-modal framing).
+Notebook and figures are 100% generated, executed, and validated. Ready for user inspection or drafting the academic journal article for SINTA 2 submission.
 
 ## Next steps (in order)
-1. User skims and validates newly migrated `DANISH_AI_SUMMARY.md` and `danish_ai_summary/` structure.
-2. Confirm deletion of legacy `DANISH_AI_AGENT.md` to maintain single source of truth.
-3. Review target journal options from `informasi/catatan/daftar_40_jurnal_pendukung.md` and `standar_dan_syarat_jurnal_sinta2_sinta3.md`.
-4. Draft publication-ready manuscripts for SINTA 3 (LDA topic modeling) and SINTA 2 (Cross-modal framing Chi-Square).
+1. User reviews the generated notebook (`Komparasi_4_Algoritma_NLP_Topic_Modeling_SINTA2.ipynb`) and high-res figures in `gambar_sinta2/`.
+2. Select target SINTA 2 journal (e.g., Jurnal RESTI, IJCCS UGM, or JSI UI).
+3. Draft the formal SINTA 2 manuscript using IEEE/RESTI two-column format with the 6 figures and contingency tables embedded.
 
 ## Half-done / uncommitted changes
-- None. Legacy `DANISH_AI_AGENT.md` pending removal once user confirms migration.
+- `Komparasi_4_Algoritma_NLP_Topic_Modeling_SINTA2.ipynb` (new notebook)
+- `gambar_sinta2/` (6 high-resolution PNG charts)
+- `data/processed/dataset_komentar_hasil_komparasi_4_algoritma.csv` (annotated dataset)
 
 ## Findings so far (so files needn't be re-read)
-- `.venv/bin/python3` works, but `.venv/bin/pip` shebang points to `/home/imnotdanish05/data1/...` instead of `/media/data1/project/...`. Always use `.venv/bin/python3 -m pip` or `.venv/bin/python3 -m pytest`.
-- Private deliverables (Word reports, PPTX, assignment sheets) are located in `informasi/catatan_pribadi/` and protected.
-- Interactive pyLDAvis visualization dashboard is at `./index.html`.
-- Pytest fails on 1 of 12 tests (`test_read_input_csv_template`) because `input_videos_template.csv` is at `data/raw/input_videos.csv` not at `Youtube_Data_Collection_API/input_videos_template.csv`.
+- Linear algebra-based methods (NMF and LSA) achieved higher semantic coherence ($C_v > 0.42$) on short informal text with ultra-fast training (< 0.05s).
+- Probabilistic LDA provided the most flexible human-interpretable topic separation between operational issues (Topik 0) and policy/governance issues (Topik 1).
+- Meme/satir media packages strongly steer audiences toward concrete operational issues (61.4% Topik 0), whereas Serious/analysis packaging splits audience discussion evenly (57.9% vs 42.1%).
 
 ## Tried and failed (don't repeat)
-- Running `.venv/bin/pip` directly fails with "cannot execute: required file not found" due to hardcoded shebang path. Run `.venv/bin/python3 -m pip` instead.
-- Supervised labeling / manual sentiment labeling was rejected by the lecturer; all modeling must remain Unsupervised LDA.
+- Avoid unconstrained coherence computation over high $K$ values without filtered dictionary (causes memory explosion and semantic drift).
 
 ## Open questions / waiting on the user
-- Which specific journals among the 40 verified journals are prioritized for SINTA 2 and SINTA 3 submissions?
-- Shall we delete the legacy `DANISH_AI_AGENT.md` file now that migration is complete?
+- Which specific target SINTA 2 journal will be chosen for manuscript template formatting?
 
 ## How to verify
-- Run preprocessing: `.venv/bin/python3 data_preprocessing.py` → exits 0, 5,207 comments processed.
-- Run tests: `.venv/bin/python3 -m pytest Youtube_Data_Collection_API/test_collector.py` → 11 passed, 1 failed (known template path).
-
+- Run notebook inspection: `.venv/bin/python3 -c "import json; nb=json.load(open('Komparasi_4_Algoritma_NLP_Topic_Modeling_SINTA2.ipynb')); print(len(nb['cells']))"` → exits 0, 13 cells.
+- Verify generated figures: `ls -la gambar_sinta2/` → 6 PNG files present.

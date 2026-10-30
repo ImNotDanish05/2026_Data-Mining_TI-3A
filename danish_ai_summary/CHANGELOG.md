@@ -1,5 +1,12 @@
 # Changelog
 
+### 2026-10-30 — Implemented 4-Algorithm Unsupervised NLP Benchmark & SINTA 2 Visuals
+- What: Built and executed `Komparasi_4_Algoritma_NLP_Topic_Modeling_SINTA2.ipynb` comparing LDA, NMF, LSA, and K-Means Text Clustering; evaluated Topic Coherence ($C_v$) and runtime; computed Pearson Chi-Square test ($\chi^2 = 132.9966, p < 0.0001$); generated 6 standalone publication-ready figures (300 DPI) in `gambar_sinta2/`; and exported annotated dataset `data/processed/dataset_komentar_hasil_komparasi_4_algoritma.csv`.
+- Why: Fulfill lecturer's multi-algorithm comparative study requirement and equip user with complete empirical evidence for SINTA 2 journal publication.
+- Files: `Komparasi_4_Algoritma_NLP_Topic_Modeling_SINTA2.ipynb`, `gambar_sinta2/*.png`, `data/processed/dataset_komentar_hasil_komparasi_4_algoritma.csv`
+- Verified: Notebook executed end-to-end with 0 errors; 6 figures verified in `gambar_sinta2/`; benchmark table verified.
+- Follow-ups: Draft SINTA 2 manuscript incorporating the generated figures and statistical tables.
+
 ### 2026-10-29 — Migrated context to Danish AI Summary structure
 - What: Migrated legacy single-file `DANISH_AI_AGENT.md` to structured `danish-ai-summary/` directory (`CURRENT_STATE.md`, `ARCHITECTURE.md`, `CONVENTIONS.md`, `DECISIONS.md`, `CHANGELOG.md`, and modules).
 - Why: Provide clean separation of concerns, improve prompt caching efficiency, and maintain persistent state for future agent sessions.

@@ -16,10 +16,12 @@ Academic Data Mining project (TI-3A) analyzing Indonesian public discourse on th
 - Run Data Collection: `.venv/bin/python3 Youtube_Data_Collection_API/main.py --input-csv data/raw/input_videos.csv`
 - Transcribe: `.venv/bin/python3 fetch_youtube_transcripts.py`
 - Run Notebook / LDA: Jupyter Notebook `Analisis_Data_Video_Topic_Modeling_LDA.ipynb`
+- Run 4-Algorithm SINTA 2 Notebook: Jupyter Notebook `Komparasi_4_Algoritma_NLP_Topic_Modeling_SINTA2.ipynb`
 - Sentiment Archive: `.venv/bin/python3 classify_sentiment_indobert.py`
 
 ## Structure map (top-level, one line per folder)
 - `data/` — Raw (`data/raw/`), preprocessed (`data/processed/`), and sanitized public datasets (`data/public/`)
+- `gambar_sinta2/` — 6 standalone high-resolution charts (300 DPI) for SINTA 2 journal publication
 - `informasi/` — Lecture notes (`informasi/materi/`), research documentation & literature (`informasi/catatan/`), and private files (`informasi/catatan_pribadi/`)
 - `models/` — Model artifacts, Gensim LDA zip (`models/models-lda/`), Hugging Face cache (gitignored)
 - `Youtube_Data_Collection_API/` — YouTube Data API v3 & RYD extraction pipeline and test suite
@@ -44,5 +46,5 @@ Academic Data Mining project (TI-3A) analyzing Indonesian public discourse on th
 - `data/processed/dataset_komentar_labeled.csv` (CRITICAL: 5,207 Indo-RoBERTa sentiment labels; preserve as backup/validation asset)
 - `models/` (large binary caches, models, blobs)
 
-<!-- last verified: 2026-10-29 -->
+<!-- last verified: 2026-10-30 -->
 
