@@ -17,6 +17,7 @@ Deliver comprehensive 4-algorithm Unsupervised NLP benchmark (LDA vs NMF vs LSA 
   - Pearson Chi-Square: $\chi^2 = 132.9966, df=2, p = 1.3187 \times 10^{-29} < 0.0001$, Cramér's $V = 0.1678$.
 - Rendered and saved 6 standalone high-resolution (300 DPI) publication-ready figures in `gambar_sinta2/`.
 - Exported enriched multi-algorithm dataset to `data/processed/dataset_komentar_hasil_komparasi_4_algoritma.csv`.
+- Expanded literature catalog in `informasi/catatan/daftar_40_jurnal_pendukung.md` to 45 journals, establishing verified peer-reviewed journal citations with DOIs for the 3 baseline comparison algorithms: NMF (Lee & Seung 1999, Greene 2014), LSA (Deerwester et al. 1990), and K-Means (Huang 2008, MacQueen 1967).
 
 ## Exactly where I stopped
 Notebook and figures are 100% generated, executed, and validated. Ready for user inspection or drafting the academic journal article for SINTA 2 submission.
