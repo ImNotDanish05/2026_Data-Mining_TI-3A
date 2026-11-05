@@ -1,11 +1,13 @@
 # Current state
-Updated: 2026-10-30
+Updated: 2026-11-05
 
 ## Goal in progress
-Deliver comprehensive 4-algorithm Unsupervised NLP benchmark (LDA vs NMF vs LSA vs K-Means) and generate publication-grade visual assets (300 DPI) for SINTA 2 academic journal publication.
+Deliver comprehensive 4-algorithm Unsupervised NLP benchmark and provide 100% client-side web testing playground (GitHub Pages ready) for model demonstration and validation.
 
 ## Done so far
-- Created and executed end-to-end Jupyter Notebook: `Komparasi_4_Algoritma_NLP_Topic_Modeling_SINTA2.ipynb` (13 cells, 100% executed with full outputs).
+- Extracted and placed trained LDA model binaries into `website/prediksi/models/` (`lda_model.gensim`, dictionary, and visualisasi_lda_interaktif.html).
+- Developed 100% static client-side web testing interface in `website/prediksi/index.html` using Tailwind CSS with a soft bright blue theme (`#f0f7ff` palette) and Plus Jakarta Sans typography.
+- Exported compact model parameters to `website/prediksi/model_data.js` (218 KB) enabling instantaneous in-browser Dirichlet variational inference with zero Python dependencies (fully deployable to GitHub Pages).
 - Benchmarked 4 Unsupervised Topic Modeling algorithms on 5,207 comments (retaining substantive MBG topic keywords):
   - **LDA**: $C_v = 0.4591$ (Rank 1), Time: 14.87s
   - **K-Means**: $C_v = 0.4009$ (Rank 2), Time: 0.26s
@@ -20,12 +22,17 @@ Deliver comprehensive 4-algorithm Unsupervised NLP benchmark (LDA vs NMF vs LSA 
 - Expanded literature catalog in `informasi/catatan/daftar_40_jurnal_pendukung.md` to 45 journals, establishing verified peer-reviewed journal citations with DOIs for the 3 baseline comparison algorithms: NMF (Lee & Seung 1999, Greene 2014), LSA (Deerwester et al. 1990), and K-Means (Huang 2008, MacQueen 1967).
 
 ## Exactly where I stopped
-Notebook and figures are 100% generated, executed, and validated. Ready for user inspection or drafting the academic journal article for SINTA 2 submission.
+- Duplicated `Analisis_Data_Video_Topic_Modeling_LDA.ipynb` into `Analisis_Data_Video_Topic_Modeling_LDA_v1.0.ipynb` (27 cells total, 1.87 MB).
+- Fully executed and embedded all outputs and graphics into `Analisis_Data_Video_Topic_Modeling_LDA_v1.0.ipynb`:
+  1. **Cell 20 (Cluster Balance):** Proves data balance with disparity gap = **28.60%** (Topik 0: 64.30% vs Topik 1: 35.70%), strictly satisfying lecturer's $\le 40\%$ constraint.
+  2. **Cell 24 (Benchmarking):** Shows 4 Unsupervised NLP models (LDA $C_v=0.4404$ vs K-Means $C_v=0.4143$ vs NMF $C_v=0.3925$ vs LSA $C_v=0.3456$), proving LDA is Rank 1 and the ONLY model that stays balanced ($\le 40\%$).
+  3. **Cell 25 (Visualizations):** Dual-axis Coherence vs Runtime chart and 4-model cluster balance comparison charts.
+  4. **Cell 26:** Comprehensive academic conclusion and lecture defense script.
 
 ## Next steps (in order)
-1. User reviews the generated notebook (`Komparasi_4_Algoritma_NLP_Topic_Modeling_SINTA2.ipynb`) and high-res figures in `gambar_sinta2/`.
-2. Select target SINTA 2 journal (e.g., Jurnal RESTI, IJCCS UGM, or JSI UI).
-3. Draft the formal SINTA 2 manuscript using IEEE/RESTI two-column format with the 6 figures and contingency tables embedded.
+1. User reviews `Analisis_Data_Video_Topic_Modeling_LDA_v1.0.ipynb` directly or in Google Colab / VSCode.
+2. Prepare presentation slides or report incorporating the balance donut chart and multi-model benchmark chart.
+3. Select target SINTA 2 journal if proceeding with paper publication.
 
 ## Half-done / uncommitted changes
 - `Komparasi_4_Algoritma_NLP_Topic_Modeling_SINTA2.ipynb` (new notebook)

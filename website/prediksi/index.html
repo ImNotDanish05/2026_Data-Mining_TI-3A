@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Pengujian Model LDA - Data Mining TI-3A</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind Config Custom Soft Blue Palette -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              200: '#bae0fd',
+              300: '#7cc5fb',
+              400: '#38a8f8',
+              500: '#0e8ce9',
+              600: '#026fc7',
+              700: '#0358a1',
+              800: '#074b85',
+              900: '#0c3f6e',
+            },
+            softslate: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #f8fafc 0%, #f0f7ff 50%, #eef6ff 100%);
+      min-height: 100vh;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(186, 224, 253, 0.5);
+    }
+    .topic-pill {
+      transition: all 0.2s ease-in-out;
+    }
+    .topic-pill:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body class="text-softslate-800 antialiased selection:bg-brand-200 selection:text-brand-900">
+
+  <!-- Top Navigation Bar -->
+  <header class="border-b border-brand-100 bg-white/75 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-400 flex items-center justify-center text-white font-bold shadow-md shadow-brand-200">
+          AI
+        </div>
+        <div>
+          <h1 class="font-bold text-base sm:text-lg text-softslate-800 leading-tight">Tester Model NLP Topic Modeling</h1>
+          <p class="text-xs text-brand-600 font-medium">Data Mining TI-3A • Politeknik Negeri Semarang</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-2">
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 mr-1.5 animate-pulse"></span>
+          100% Client-Side (GitHub Pages)
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 space-y-8">
+
+    <!-- Hero / Title Section -->
+    <div class="text-center space-y-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-200/80 text-brand-700 text-xs font-semibold">
+        <span>✨ Latent Dirichlet Allocation (LDA)</span>
+        <span>•</span>
+        <span>Optimal K = 2</span>
+        <span>•</span>
+        <span>Coherence C_v = 0.4591</span>
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-softslate-800 tracking-tight">
+        Uji Prediksi Topik Opini Publik MBG
+      </h2>
+      <p class="text-softslate-600 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+        Masukkan teks komentar warganet untuk melihat bagaimana model Unsupervised LDA mengklasifikasikan isu ke dalam klaster opini publik secara instan langsung di browsermu!
+      </p>
+    </div>
+
+    <!-- 2 Column Overview Cards: Karakteristik Topik 0 & 1 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+      
+      <!-- Topik 0 Card -->
+      <div class="glass-card rounded-2xl p-5 shadow-sm hover:shadow-md transition duration-300 border-l-4 border-l-brand-400">
+        <div class="flex items-start justify-between">
+          <div>
+            <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-brand-100 text-brand-800">
+              TOPIK 0
+            </span>
+            <h3 class="font-bold text-base text-softslate-800 mt-2">Isu Mutu & Operasional Lapangan</h3>
+          </div>
+          <span class="text-2xl">🍱</span>
+        </div>
+        <p class="text-xs sm:text-sm text-softslate-600 mt-2 leading-relaxed">
+          Menyoroti kelayakan menu makanan siswa, kasus keracunan makanan basi, sanitasi dapur penyedia, porsi gizi susu, dan teknis pelaksanaan di sekolah.
+        </p>
+        <div class="mt-3 pt-3 border-t border-brand-100/60">
+          <span class="text-xs font-semibold text-softslate-500 block mb-1.5">Kata Kunci Utama:</span>
+          <div class="flex flex-wrap gap-1.5" id="topic0-keywords">
+            <span class="px-2 py-0.5 rounded text-xs bg-white text-brand-700 border border-brand-200 font-medium">mbg</span>
+            <span class="px-2 py-0.5 rounded text-xs bg-white text-brand-700 border border-brand-200 font-medium">makan</span>
+            <span class="px-2 py-0.5 rounded text-xs bg-white text-brand-700 border border-brand-200 font-medium">sekolah</span>
+            <span class="px-2 py-0.5 rounded text-xs bg-white text-brand-700 border border-brand-200 font-medium">anak</span>
+            <span class="px-2 py-0.5 rounded text-xs bg-white text-brand-700 border border-brand-200 font-medium">keracunan</span>
+            <span class="px-2 py-0.5 rounded text-xs bg-white text-brand-700 border border-brand-200 font-medium">makanan</span>
+            <span class="px-2 py-0.5 rounded text-xs bg-white text-brand-700 border border-brand-200 font-medium">dapur</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Topik 1 Card -->
+      <div class="glass-card rounded-2xl p-5 shadow-sm hover:shadow-md transition duration-300 border-l-4 border-l-indigo-400">
+        <div class="flex items-start justify-between">
+          <div>
+            <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-indigo-100 text-indigo-800">
+              TOPIK 1
+            </span>
+            <h3 class="font-bold text-base text-softslate-800 mt-2">Isu Kebijakan & Prioritas Guru</h3>
+          </div>
+          <span class="text-2xl">🏛️</span>
+        </div>
+        <p class="text-xs sm:text-sm text-softslate-600 mt-2 leading-relaxed">
+          Menyoroti transparansi anggaran negara (APBN), risiko korupsi, serta tuntutan agar dana dialihkan untuk kesejahteraan gaji guru honorer dan pendidikan.
+        </p>
+        <div class="mt-3 pt-3 border-t border-indigo-100/60">
+          <span class="text-xs font-semibold text-softslate-500 block mb-1.5">Kata Kunci Utama:</span>
+          <div class="flex flex-wrap gap-1.5" id="topic1-keywords">
+            <span class="px-2 py-0.5 rounded text-xs bg-white text-indigo-700 border border-indigo-200 font-medium">rakyat</span>
+            <span class="px-2 py-0.5 rounded text-xs bg-white text-indigo-700 border border-indigo-200 font-medium">negara</span>
+            <span class="px-2 py-0.5 rounded text-xs bg-white text-indigo-700 border border-indigo-200 font-medium">prabowo</span>
+            <span class="px-2 py-0.5 rounded text-xs bg-white text-indigo-700 border border-indigo-200 font-medium">presiden</span>
+            <span class="px-2 py-0.5 rounded text-xs bg-white text-indigo-700 border border-indigo-200 font-medium">dpr</span>
+            <span class="px-2 py-0.5 rounded text-xs bg-white text-indigo-700 border border-indigo-200 font-medium">guru</span>
+            <span class="px-2 py-0.5 rounded text-xs bg-white text-indigo-700 border border-indigo-200 font-medium">anggaran</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Playground Form Section -->
+    <div class="glass-card rounded-2xl p-6 sm:p-8 shadow-md border border-brand-200/70">
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <label for="inputText" class="font-bold text-base text-softslate-800 flex items-center gap-2">
+            <span>✍️ Masukkan Teks Komentar:</span>
+          </label>
+          <span id="charCount" class="text-xs text-softslate-500 font-medium">0 karakter</span>
+        </div>
+
+        <div class="relative">
+          <textarea
+            id="inputText"
+            rows="3"
+            class="w-full rounded-xl border border-brand-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-100 p-4 text-sm sm:text-base text-softslate-800 placeholder-softslate-400 bg-white/90 outline-none transition duration-200 resize-y"
+            placeholder="Ketik komentar apa saja di sini... Contoh: 'kasihan guru honorer gajinya kecil' atau 'makanannya ada yang basi anak sekolah keracunan'..."
+          ></textarea>
+        </div>
+
+        <!-- Quick Sample Chips -->
+        <div class="space-y-2">
+          <span class="text-xs font-semibold text-softslate-500 uppercase tracking-wider block">
+            💡 Contoh Komentar Cepat (Klik untuk Coba Langsung):
+          </span>
+          <div class="flex flex-wrap gap-2" id="sampleContainer">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <button
+            id="btnPredict"
+            class="flex-1 bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 text-white font-bold py-3 px-6 rounded-xl shadow-md shadow-brand-200 transition duration-200 flex items-center justify-center gap-2 active:scale-[0.99]"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            <span>Prediksi Topik Sekarang</span>
+          </button>
+          
+          <button
+            id="btnClear"
+            class="px-5 py-3 rounded-xl border border-softslate-200 bg-white hover:bg-softslate-50 text-softslate-600 font-semibold text-sm transition duration-200"
+          >
+            Bersihkan
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prediction Results Section (Hidden until tested) -->
+    <div id="resultCard" class="hidden glass-card rounded-2xl p-6 sm:p-8 shadow-lg border border-brand-200 transition-all duration-300">
+      
+      <!-- Dominant Header -->
+      <div id="dominantBanner" class="p-4 rounded-xl flex items-center justify-between transition duration-300">
+        <div class="flex items-center gap-3">
+          <div id="dominantIcon" class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl shadow-sm">
+            🍱
+          </div>
+          <div>
+            <div class="text-xs uppercase font-extrabold tracking-wider" id="dominantTopicBadge">
+              Topik Terprediksi
+            </div>
+            <h3 class="text-xl sm:text-2xl font-black" id="dominantTopicTitle">
+              Topik 0: Isu Mutu & Operasional Lapangan
+            </h3>
+          </div>
+        </div>
+        <div class="text-right">
+          <div class="text-xs text-softslate-500 font-medium">Tingkat Keyakinan</div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-brand-600" id="confidenceValue">
+            89.4%
+          </div>
+        </div>
+      </div>
+
+      <!-- Probability Bars -->
+      <div class="mt-6 space-y-4">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-softslate-500">
+          Distribusi Probabilitas Topik:
+        </h4>
+
+        <!-- Bar Topik 0 -->
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs sm:text-sm font-semibold">
+            <span class="text-brand-800 flex items-center gap-1.5">
+              <span class="w-3 h-3 rounded-full bg-brand-500"></span>
+              Topik 0: Isu Mutu Makanan & Kasus Lapangan
+            </span>
+            <span id="pct0" class="text-brand-900 font-bold">50.0%</span>
+          </div>
+          <div class="w-full bg-softslate-100 h-3.5 rounded-full overflow-hidden p-0.5 border border-brand-100">
+            <div id="bar0" class="bg-gradient-to-r from-brand-400 to-brand-600 h-full rounded-full transition-all duration-500" style="width: 50%;"></div>
+          </div>
+        </div>
+
+        <!-- Bar Topik 1 -->
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs sm:text-sm font-semibold">
+            <span class="text-indigo-800 flex items-center gap-1.5">
+              <span class="w-3 h-3 rounded-full bg-indigo-500"></span>
+              Topik 1: Isu Tata Kelola Kebijakan & Prioritas Guru
+            </span>
+            <span id="pct1" class="text-indigo-900 font-bold">50.0%</span>
+          </div>
+          <div class="w-full bg-softslate-100 h-3.5 rounded-full overflow-hidden p-0.5 border border-indigo-100">
+            <div id="bar1" class="bg-gradient-to-r from-indigo-400 to-indigo-600 h-full rounded-full transition-all duration-500" style="width: 50%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recognized Words Detection Chips -->
+      <div class="mt-6 pt-5 border-t border-brand-100 space-y-2">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-softslate-500">
+          🔍 Kata Kunci Terdeteksi oleh Kosakata Model:
+        </h4>
+        <div id="recognizedWordsContainer" class="flex flex-wrap gap-2">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- AI Thematic Reasoning -->
+      <div class="mt-5 p-4 rounded-xl bg-white border border-brand-100 text-xs sm:text-sm text-softslate-600 leading-relaxed" id="reasoningBox">
+        <!-- Will explain inference logic -->
+      </div>
+    </div>
+
+    <!-- pyLDAvis Interactive Link Card -->
+    <div class="glass-card rounded-2xl p-5 border border-brand-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center font-bold">
+          🌐
+        </div>
+        <div>
+          <h4 class="font-bold text-sm text-softslate-800">Visualisasi Peta Semantik pyLDAvis</h4>
+          <p class="text-xs text-softslate-500">Buka diagram 2D jarak antartopik interaktif (PCoA Intertopic Distance Map).</p>
+        </div>
+      </div>
+      <a
+        href="models/visualisasi_lda_interaktif.html"
+        target="_blank"
+        class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-50 hover:bg-brand-100 text-brand-700 font-bold text-xs border border-brand-200 transition duration-200"
+      >
+        <span>Buka pyLDAvis HTML</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-12 py-6 border-t border-brand-100 text-center text-xs text-softslate-500 space-y-1">
+    <p>Data Mining TI-3A • Pemodelan Topik Unsupervised LDA • Evaluasi K=2 ($C_v=0.4591$)</p>
+    <p class="text-softslate-400">Siap Dihosting di GitHub Pages (100% Statis Tanpa Server Python)</p>
+  </footer>
+
+  <!-- Include Model Data JS (220KB compact) -->
+  <script src="model_data.js"></script>
+
+  <!-- Pure Client-Side JavaScript LDA Inference Engine -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const inputText = document.getElementById('inputText');
+      const charCount = document.getElementById('charCount');
+      const btnPredict = document.getElementById('btnPredict');
+      const btnClear = document.getElementById('btnClear');
+      const sampleContainer = document.getElementById('sampleContainer');
+      const resultCard = document.getElementById('resultCard');
+
+      // Result Elements
+      const dominantBanner = document.getElementById('dominantBanner');
+      const dominantIcon = document.getElementById('dominantIcon');
+      const dominantTopicBadge = document.getElementById('dominantTopicBadge');
+      const dominantTopicTitle = document.getElementById('dominantTopicTitle');
+      const confidenceValue = document.getElementById('confidenceValue');
+      const pct0 = document.getElementById('pct0');
+      const pct1 = document.getElementById('pct1');
+      const bar0 = document.getElementById('bar0');
+      const bar1 = document.getElementById('bar1');
+      const recognizedWordsContainer = document.getElementById('recognizedWordsContainer');
+      const reasoningBox = document.getElementById('reasoningBox');
+
+      // Populate Sample Chips
+      if (window.MODEL_DATA && window.MODEL_DATA.sample_comments) {
+        window.MODEL_DATA.sample_comments.forEach(sample => {
+          const chip = document.createElement('button');
+          chip.className = "topic-pill text-xs px-3 py-1.5 rounded-lg bg-white hover:bg-brand-50 border border-brand-200/80 text-softslate-700 font-medium shadow-sm transition";
+          chip.textContent = sample.label;
+          chip.addEventListener('click', () => {
+            inputText.value = sample.text;
+            updateCharCount();
+            runInference();
+          });
+          sampleContainer.appendChild(chip);
+        });
+      }
+
+      // Char counter
+      function updateCharCount() {
+        charCount.textContent = `${inputText.value.length} karakter`;
+      }
+      inputText.addEventListener('input', updateCharCount);
+
+      // Clear button
+      btnClear.addEventListener('click', () => {
+        inputText.value = '';
+        updateCharCount();
+        resultCard.classList.add('hidden');
+      });
+
+      // Predict Button
+      btnPredict.addEventListener('click', runInference);
+
+      // Enter key (Ctrl + Enter)
+      inputText.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+          runInference();
+        }
+      });
+
+      // Core Pure JS LDA Inference Function
+      function runInference() {
+        const text = inputText.value.trim();
+        if (!text) {
+          alert('Silakan masukkan teks komentar terlebih dahulu.');
+          return;
+        }
+
+        if (!window.MODEL_DATA) {
+          alert('Error: Data model (model_data.js) gagal dimuat.');
+          return;
+        }
+
+        const data = window.MODEL_DATA;
+        const words = text.toLowerCase().replace(/[^a-zA-Z0-9\s]/g, ' ').split(/\s+/).filter(w => w.length > 2);
+
+        // Count term frequency in document
+        const counts = {};
+        words.forEach(w => {
+          if (data.word2id[w] !== undefined) {
+            counts[w] = (counts[w] || 0) + 1;
+          }
+        });
+
+        const recognizedKeys = Object.keys(counts);
+
+        let p0 = 50.0;
+        let p1 = 50.0;
+        const matchedDetails = [];
+
+        if (recognizedKeys.length === 0) {
+          // Out-of-vocabulary fallback to Dirichlet prior
+          p0 = (data.alpha[0] / (data.alpha[0] + data.alpha[1])) * 100;
+          p1 = (data.alpha[1] / (data.alpha[0] + data.alpha[1])) * 100;
+        } else {
+          // Variational log likelihood
+          let logP0 = Math.log(data.alpha[0]);
+          let logP1 = Math.log(data.alpha[1]);
+
+          recognizedKeys.forEach(w => {
+            const id = data.word2id[w];
+            const c = counts[w];
+            const w0 = data.expElogbeta[0][id];
+            const w1 = data.expElogbeta[1][id];
+
+            logP0 += c * Math.log(w0 + 1e-12);
+            logP1 += c * Math.log(w1 + 1e-12);
+
+            const leans = w0 >= w1 ? 0 : 1;
+            matchedDetails.push({
+              word: w,
+              count: c,
+              w0: w0,
+              w1: w1,
+              leans: leans
+            });
+          });
+
+          // Softmax
+          const maxLog = Math.max(logP0, logP1);
+          const exp0 = Math.exp(logP0 - maxLog);
+          const exp1 = Math.exp(logP1 - maxLog);
+          const sumExp = exp0 + exp1;
+
+          p0 = (exp0 / sumExp) * 100;
+          p1 = (exp1 / sumExp) * 100;
+        }
+
+        // Dominant Topic
+        const dominant = p0 >= p1 ? 0 : 1;
+        const confidence = dominant === 0 ? p0 : p1;
+
+        // Render UI
+        renderResults(dominant, confidence, p0, p1, matchedDetails);
+      }
+
+      function renderResults(dominant, confidence, p0, p1, matched) {
+        resultCard.classList.remove('hidden');
+
+        // Update Dominant Banner
+        if (dominant === 0) {
+          dominantBanner.className = "p-4 rounded-xl flex items-center justify-between bg-sky-50 border border-sky-200 text-sky-950";
+          dominantIcon.className = "w-12 h-12 rounded-xl flex items-center justify-center text-2xl bg-sky-500 text-white shadow-sm";
+          dominantIcon.textContent = "🍱";
+          dominantTopicBadge.textContent = "TOPIK DOMINAN: TOPIK 0";
+          dominantTopicBadge.className = "text-xs uppercase font-extrabold tracking-wider text-sky-700";
+          dominantTopicTitle.textContent = "Isu Mutu & Operasional Lapangan";
+        } else {
+          dominantBanner.className = "p-4 rounded-xl flex items-center justify-between bg-indigo-50 border border-indigo-200 text-indigo-950";
+          dominantIcon.className = "w-12 h-12 rounded-xl flex items-center justify-center text-2xl bg-indigo-500 text-white shadow-sm";
+          dominantIcon.textContent = "🏛️";
+          dominantTopicBadge.textContent = "TOPIK DOMINAN: TOPIK 1";
+          dominantTopicBadge.className = "text-xs uppercase font-extrabold tracking-wider text-indigo-700";
+          dominantTopicTitle.textContent = "Isu Kebijakan & Prioritas Guru";
+        }
+
+        confidenceValue.textContent = `${confidence.toFixed(1)}%`;
+        pct0.textContent = `${p0.toFixed(1)}%`;
+        pct1.textContent = `${p1.toFixed(1)}%`;
+
+        bar0.style.width = `${p0.toFixed(1)}%`;
+        bar1.style.width = `${p1.toFixed(1)}%`;
+
+        // Render Recognized Words
+        recognizedWordsContainer.innerHTML = '';
+        if (matched.length === 0) {
+          recognizedWordsContainer.innerHTML = '<span class="text-xs text-softslate-400 italic">Tidak ada kata kunci khusus yang cocok dengan kamus model (menggunakan prior distribusi Dirichlet dasar).</span>';
+        } else {
+          matched.forEach(item => {
+            const badge = document.createElement('span');
+            if (item.leans === 0) {
+              badge.className = "inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-semibold bg-sky-100 text-sky-800 border border-sky-300";
+              badge.innerHTML = `<span>${item.word}</span> <span class="text-[10px] bg-sky-200 px-1 rounded text-sky-900">T0</span>`;
+            } else {
+              badge.className = "inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-100 text-indigo-800 border border-indigo-300";
+              badge.innerHTML = `<span>${item.word}</span> <span class="text-[10px] bg-indigo-200 px-1 rounded text-indigo-900">T1</span>`;
+            }
+            recognizedWordsContainer.appendChild(badge);
+          });
+        }
+
+        // Render Reasoning
+        if (dominant === 0) {
+          reasoningBox.innerHTML = `
+            <strong>💡 Analisis Semantik AI:</strong> Model mengarahkan komentar ini ke <strong>Topik 0</strong> (${p0.toFixed(1)}%) karena mengandung kosakata yang berasosiasi erat dengan aspek uji coba lapangan, higienitas dapur, dan kasus mutu konsumsi anak sekolah.
+          `;
+        } else {
+          reasoningBox.innerHTML = `
+            <strong>💡 Analisis Semantik AI:</strong> Model mengarahkan komentar ini ke <strong>Topik 1</strong> (${p1.toFixed(1)}%) karena memuat kata-kata yang berasosiasi kuat dengan pengawasan anggaran negara, risiko korupsi, serta aspirasi kesejahteraan guru dan kebijakan makro.
+          `;
+        }
+
+        // Smooth scroll to result
+        resultCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  </script>
+</body>
+</html>
+

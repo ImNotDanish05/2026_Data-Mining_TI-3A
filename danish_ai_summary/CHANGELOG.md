@@ -1,5 +1,16 @@
 # Changelog
 
+### 2026-11-05 — Released Analisis_Data_Video_Topic_Modeling_LDA_v1.0.ipynb (Data Balance & 4-Algorithm Benchmark)
+- What: Created and fully executed `Analisis_Data_Video_Topic_Modeling_LDA_v1.0.ipynb` (27 cells total, 1.87 MB). Embedded:
+  1. Detailed cluster balance evaluation (Cell 20) with Donut & Bar charts proving a **28.60% disparity gap** (Topik 0: 64.30% vs Topik 1: 35.70%), strictly satisfying lecturer's $\le 40\%$ requirement.
+  2. Multi-model comparative benchmarking (Cell 24) evaluating 4 Unsupervised NLP models (LDA, NMF, LSA, K-Means Text Clustering) on Topic Coherence ($C_v$), training time, and cluster balance. Proved LDA is Rank 1 ($C_v = 0.4404$) and the ONLY model that prevents severe class imbalance ($\le 40\%$).
+  3. Comparative visualization charts (Cell 25) with dual-axis Coherence vs Runtime and multi-panel cluster balance bar charts.
+  4. Patched `pyLDAvis` `NumPyEncoder` to prevent `complex128` serialization bug on modern NumPy.
+- Why: Fulfill user's request for Option A duplicate (`_v1.0`), explicitly demonstrating data balance and visual multi-model comparison for lecture evaluation and journal publication.
+- Files: `Analisis_Data_Video_Topic_Modeling_LDA_v1.0.ipynb`, `website/prediksi/index.html`, `website/prediksi/model_data.js`
+- Verified: Executed all 27 cells with exit code 0; verified embedded images and stdout outputs.
+
+
 ### 2026-10-30 — Implemented 4-Algorithm Unsupervised NLP Benchmark & SINTA 2 Visuals
 - What: Built and executed `Komparasi_4_Algoritma_NLP_Topic_Modeling_SINTA2.ipynb` comparing LDA, NMF, LSA, and K-Means Text Clustering; evaluated Topic Coherence ($C_v$) and runtime; computed Pearson Chi-Square test ($\chi^2 = 132.9966, p < 0.0001$); generated 6 standalone publication-ready figures (300 DPI) in `gambar_sinta2/`; and exported annotated dataset `data/processed/dataset_komentar_hasil_komparasi_4_algoritma.csv`.
 - Why: Fulfill lecturer's multi-algorithm comparative study requirement and equip user with complete empirical evidence for SINTA 2 journal publication.
