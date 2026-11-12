@@ -1,5 +1,15 @@
 # Changelog
 
+### 2026-11-12 — Updated Presentation Deck with Cluster Balance & 4-Algorithm Benchmark
+- What: Updated presentation slide deck `informasi/materi/Danish Mahdi - Analisis Opini Publik MBG - Data Mining TI-3A.pptx` (from 17 to 19 slides):
+  1. Slide 11: Added Cluster Balance Check card confirming Disparity Gap = 28.56% (64.28% vs 35.72%), satisfying <= 40% threshold and proving absence of mode collapse.
+  2. Slide 14 (New): Inserted 4-Algorithm Unsupervised Topic Modeling Benchmark (LDA, NMF, LSA, K-Means) with Coherence ($C_v$), Training Runtime, Cluster distributions, and Figure 4 donut chart.
+  3. Slide 15 (New): Inserted Literature Basis featuring 1 primary algorithm (LDA - Blei 2003 & Wiranto 2022 Jurnal RESTI SINTA 2) + 3 benchmark baseline journals (NMF Nature 1999 & IEEE ICDM 2014, LSA JASIS 1990, K-Means Jurnal RESTI SINTA 2 2019 & NZCSRSC 2008) with verified DOIs and links.
+- Why: User requested deck update incorporating cluster balance notification and 4-algorithm benchmark with journal citations and links for course defense.
+- Files: `informasi/materi/Danish Mahdi - Analisis Opini Publik MBG - Data Mining TI-3A.pptx`, `informasi/materi/Danish Mahdi - Analisis Opini Publik MBG - Data Mining TI-3A.pptx.backup_20261112`
+- Verified: Created full backup; inspected slide count (19 slides); verified typography, shapes, and layouts via `python-pptx`.
+
+
 ### 2026-11-05 — Released Analisis_Data_Video_Topic_Modeling_LDA_v1.0.ipynb (Data Balance & 4-Algorithm Benchmark)
 - What: Created and fully executed `Analisis_Data_Video_Topic_Modeling_LDA_v1.0.ipynb` (27 cells total, 1.87 MB). Embedded:
   1. Detailed cluster balance evaluation (Cell 20) with Donut & Bar charts proving a **28.60% disparity gap** (Topik 0: 64.30% vs Topik 1: 35.70%), strictly satisfying lecturer's $\le 40\%$ requirement.
