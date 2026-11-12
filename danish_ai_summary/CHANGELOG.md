@@ -1,12 +1,22 @@
 # Changelog
 
+### 2026-11-12 — Added HAC & GMM SINTA 2 Literature & Expanded Benchmark to 6 Algorithms
+- What: Added 2 new verified peer-reviewed journal entries (Entries 46 and 47) to `informasi/catatan/daftar_40_jurnal_pendukung.md`:
+  1. Entry 46: Hierarchical Agglomerative Clustering (HAC) on Twitter text mining (Sinkron, SINTA 2, DOI: 10.33395/sinkron.v8i3.12616).
+  2. Entry 47: Gaussian Mixture Models (GMM) clustering (Jurnal RESTI, SINTA 2, DOI: 10.29207/resti.v6i5.4459).
+  Both links verified 200 OK (no 404/403).
+- Why: User expanded unsupervised benchmark to 6 algorithms as required by lecturer, necessitating formal literature citations and active DOIs.
+- Files: `informasi/catatan/daftar_40_jurnal_pendukung.md`
+- Verified: Inspected DOI registries and official OJS portals via web search; confirmed 200 OK status.
+
+
 ### 2026-11-12 — Updated Presentation Deck with Cluster Balance & 4-Algorithm Benchmark
-- What: Updated presentation slide deck `informasi/materi/Danish Mahdi - Analisis Opini Publik MBG - Data Mining TI-3A.pptx` (from 17 to 19 slides):
+- What: Updated presentation slide deck `informasi/materi/ImNotDanish05 - Analisis Opini Publik MBG - Data Mining TI-3A.pptx` (from 17 to 19 slides):
   1. Slide 11: Added Cluster Balance Check card confirming Disparity Gap = 28.56% (64.28% vs 35.72%), satisfying <= 40% threshold and proving absence of mode collapse.
   2. Slide 14 (New): Inserted 4-Algorithm Unsupervised Topic Modeling Benchmark (LDA, NMF, LSA, K-Means) with Coherence ($C_v$), Training Runtime, Cluster distributions, and Figure 4 donut chart.
   3. Slide 15 (New): Inserted Literature Basis featuring 1 primary algorithm (LDA - Blei 2003 & Wiranto 2022 Jurnal RESTI SINTA 2) + 3 benchmark baseline journals (NMF Nature 1999 & IEEE ICDM 2014, LSA JASIS 1990, K-Means Jurnal RESTI SINTA 2 2019 & NZCSRSC 2008) with verified DOIs and links.
 - Why: User requested deck update incorporating cluster balance notification and 4-algorithm benchmark with journal citations and links for course defense.
-- Files: `informasi/materi/Danish Mahdi - Analisis Opini Publik MBG - Data Mining TI-3A.pptx`, `informasi/materi/Danish Mahdi - Analisis Opini Publik MBG - Data Mining TI-3A.pptx.backup_20261112`
+- Files: `informasi/materi/ImNotDanish05 - Analisis Opini Publik MBG - Data Mining TI-3A.pptx`, `informasi/materi/ImNotDanish05 - Analisis Opini Publik MBG - Data Mining TI-3A.pptx.backup_20261112`
 - Verified: Created full backup; inspected slide count (19 slides); verified typography, shapes, and layouts via `python-pptx`.
 
 

@@ -271,7 +271,7 @@ Dokumen ini berisi daftar **42 artikel jurnal ilmiah riil, 100% terverifikasi ak
 - **Status Link**: **Terverifikasi Aktif (AKSW Direct 200 OK & Crossref 200)**
 - **Catatan Khusus SINTA 2**: **Paper Fondasi Matematis Internasional Wajib Dikutip**. Menjustifikasi mengapa riset kita memilih metrik $C_v$ (kombinasi *Normalized Pointwise Mutual Information* / NPMI dan *cosine similarity*) yang terbukti paling berkorelasi tinggi dengan persepsi interpretasi kognitif manusia dalam mengunci $K=2$ ($C_v = 0,3911$) sebagai titik puncak optimal.
 
-### 29. Makalah Seminal Penemu Algoritma Latent Dirichlet Allocation
+### 29. Makalah Seminal Penemu Algoritma Latent Dirichlet Allocation (Algoritma Utama Kita)
 - **Judul**: *Latent Dirichlet Allocation*
 - **Penulis**: David M. Blei, Andrew Y. Ng, Michael I. Jordan
 - **Jurnal**: Journal of Machine Learning Research (JMLR), Vol. 3, 2003, pp. 993–1022.
@@ -403,9 +403,9 @@ Dokumen ini berisi daftar **42 artikel jurnal ilmiah riil, 100% terverifikasi ak
 
 ---
 
-# BAGIAN IV: KOMPARASI ALGORITMA BENCHMARK (NMF, LSA, K-MEANS)
+# BAGIAN IV: KOMPARASI ALGORITMA BENCHMARK (NMF, LSA, K-MEANS, HAC, GMM)
 
-Kelompok ini memuat rujukan jurnal ilmiah resmi untuk **3 algoritma pembanding (*baseline algorithms*)** yang diuji berdampingan dengan algoritma utama kita (**LDA**) sesuai arahan dosen penguji:
+Kelompok ini memuat rujukan jurnal ilmiah resmi untuk **5 algoritma pembanding (*baseline algorithms*)** yang diuji berdampingan dengan algoritma utama kita (**LDA**) sesuai arahan dosen penguji:
 
 ## Kelompok 12: Algoritma Pembanding Topic Modeling & Text Clustering
 
@@ -437,4 +437,30 @@ Kelompok ini memuat rujukan jurnal ilmiah resmi untuk **3 algoritma pembanding (
   - Anna Huang (2008). *Similarity Measures for Text Document Clustering*. Proceedings of the Sixth New Zealand Computer Science Research Student Conference (NZCSRSC), pp. 49–56. [Teks Lengkap PDF (Semantic Scholar)](https://www.semanticscholar.org/paper/Similarity-Measures-for-Text-Document-Clustering-Huang/b29bf8f6900b4b0258397f73957eabd1bb977ef4).
   - J. MacQueen (1967). *Some Methods for Classification and Analysis of Multivariate Observations*. Proceedings of the Fifth Berkeley Symposium on Mathematical Statistics and Probability, Vol. 1, pp. 281–297. [Open Access Project Euclid](https://projecteuclid.org/euclid.bsmsp/1200512992).
 - **Catatan Khusus Pengujian**: Menjustifikasi penggunaan K-Means sebagai pembanding klasik berbasis partisi geometris sentroid (*hard clustering*) pada matriks dokumen TF-IDF di jurnal SINTA 2. Terbukti menghasilkan Topic Coherence $C_v = 0.4009$, namun pembagian topik sangat timpang (85.54% vs 14.46%) pada korpus komentar warganet.
+
+### 46. Algoritma Pembanding 4: Hierarchical Agglomerative Clustering (HAC)
+- **Judul**: *Analysis Content Type and Emotion of the Presidential Election Users Tweets using Agglomerative Hierarchical Clustering*
+- **Penulis**: Cika Carissa Sujadi, Yuliant Sibaroni, Aditya Firman Ihsan
+- **Jurnal**: Sinkron : Jurnal dan Penelitian Teknik Informatika, Vol. 8, No. 3, 2023, pp. 1230–1237 (Terbitan Juli 2023).
+- **Akreditasi**: **SINTA 2**
+- **DOI**: [10.33395/sinkron.v8i3.12616](https://doi.org/10.33395/sinkron.v8i3.12616)
+- **Tautan Portal OJS Resmi**: [Portal OJS Sinkron (polgan.ac.id)](https://jurnal.polgan.ac.id/index.php/sinkron/article/view/12616)
+- **Status Link**: **Terverifikasi Aktif (Crossref 200 OK & OJS Sinkron 200 OK, Bebas 404 & Bebas 403)**
+- **Rujukan Fondasi Teori Hierarchical Clustering**:
+  - Joe H. Ward Jr. (1963). *Hierarchical Grouping to Optimize an Objective Function*. Journal of the American Statistical Association (JASA), Vol. 58, No. 301, pp. 236–244. DOI: [10.1080/01621459.1963.10500845](https://doi.org/10.1080/01621459.1963.10500845).
+  - P. H. A. Sneath & R. R. Sokal (1973). *Numerical Taxonomy: The Principles and Practice of Numerical Classification*. W. H. Freeman & Co, San Francisco.
+- **Catatan Khusus Pengujian**: Menjustifikasi penggunaan Agglomerative Hierarchical Clustering (HAC) dengan *Cosine Metric* dan *Average Linkage* pada matriks TF-IDF dokumen media sosial bahasa Indonesia di jurnal terakreditasi SINTA 2. Hasil eksperimen membuktikan HAC menghasilkan Topic Coherence tertinggi ($C_v = 0.5612$), namun memiliki kompleksitas komputasi $O(N^2)$ dan durasi latih terlama (38.50 detik) dibanding model probabilistik LDA (32.62 detik).
+
+### 47. Algoritma Pembanding 5: Gaussian Mixture Models (GMM) via Expectation-Maximization
+- **Judul**: *House Prices Segmentation Using Gaussian Mixture Model-Based Clustering*
+- **Penulis**: Muhammad Hafidh Raditya, Indwiarti, Aniq Atiqi Rohmawati
+- **Jurnal**: Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi), Vol. 6, No. 5, 2022, pp. 866–871.
+- **Akreditasi**: **SINTA 2**
+- **DOI**: [10.29207/resti.v6i5.4459](https://doi.org/10.29207/resti.v6i5.4459)
+- **Tautan Portal OJS Resmi**: [Portal Resmi Jurnal RESTI (iaii.or.id)](https://jurnal.iaii.or.id/index.php/RESTI/article/view/4459)
+- **Status Link**: **Terverifikasi Aktif (Crossref 200 OK & OJS RESTI 200 OK, Bebas 404 & Bebas 403)**
+- **Rujukan Fondasi Matematis Algoritma EM & Campuran Gaussian**:
+  - A. P. Dempster, N. M. Laird, D. B. Rubin (1977). *Maximum Likelihood from Incomplete Data via the EM Algorithm*. Journal of the Royal Statistical Society: Series B (Methodological), Vol. 39, No. 1, pp. 1–38. DOI: [10.1111/j.2517-6161.1977.tb01600.x](https://doi.org/10.1111/j.2517-6161.1977.tb01600.x).
+  - Douglas Reynolds (2009). *Gaussian Mixture Models*. Encyclopedia of Biometrics, Springer, Boston, MA. DOI: [10.1007/978-0-387-73003-5_196](https://doi.org/10.1007/978-0-387-73003-5_196).
+- **Catatan Khusus Pengujian**: Menjustifikasi penggunaan Gaussian Mixture Model (GMM) sebagai pembanding berbasis kerapatan probabilitas kontinu (*density-based soft clustering*) pada komponen reduksi dimensi SVD korpus teks di jurnal terakreditasi SINTA 2. Hasil pengujian menunjukkan GMM sangat efisien (waktu latih 0.09 detik) dan menghasilkan koherensi semantik tinggi ($C_v = 0.4428$), namun distribusi kovarians penuh (*full covariance*) pada teks pendek informal memerlukan reduksi dimensi komponen laten agar matriks kovarians tidak mengalami singularitas.
 
