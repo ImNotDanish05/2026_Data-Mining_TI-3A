@@ -403,7 +403,7 @@ Dokumen ini berisi daftar **42 artikel jurnal ilmiah riil, 100% terverifikasi ak
 
 ---
 
-# BAGIAN IV: KOMPARASI ALGORITMA BENCHMARK (NMF, LSA, K-MEANS, HAC, GMM)
+# BAGIAN IV: KOMPARASI ALGORITMA BENCHMARK (NMF, LSA, K-MEANS, HAC, HDP)
 
 Kelompok ini memuat rujukan jurnal ilmiah resmi untuk **5 algoritma pembanding (*baseline algorithms*)** yang diuji berdampingan dengan algoritma utama kita (**LDA**) sesuai arahan dosen penguji:
 
@@ -451,16 +451,14 @@ Kelompok ini memuat rujukan jurnal ilmiah resmi untuk **5 algoritma pembanding (
   - P. H. A. Sneath & R. R. Sokal (1973). *Numerical Taxonomy: The Principles and Practice of Numerical Classification*. W. H. Freeman & Co, San Francisco.
 - **Catatan Khusus Pengujian**: Menjustifikasi penggunaan Agglomerative Hierarchical Clustering (HAC) dengan *Cosine Metric* dan *Average Linkage* pada matriks TF-IDF dokumen media sosial bahasa Indonesia di jurnal terakreditasi SINTA 2. Hasil eksperimen membuktikan HAC menghasilkan Topic Coherence tertinggi ($C_v = 0.5612$), namun memiliki kompleksitas komputasi $O(N^2)$ dan durasi latih terlama (38.50 detik) dibanding model probabilistik LDA (32.62 detik).
 
-### 47. Algoritma Pembanding 5: Gaussian Mixture Models (GMM) via Expectation-Maximization
-- **Judul**: *House Prices Segmentation Using Gaussian Mixture Model-Based Clustering*
-- **Penulis**: Muhammad Hafidh Raditya, Indwiarti, Aniq Atiqi Rohmawati
-- **Jurnal**: Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi), Vol. 6, No. 5, 2022, pp. 866–871.
-- **Akreditasi**: **SINTA 2**
-- **DOI**: [10.29207/resti.v6i5.4459](https://doi.org/10.29207/resti.v6i5.4459)
-- **Tautan Portal OJS Resmi**: [Portal Resmi Jurnal RESTI (iaii.or.id)](https://jurnal.iaii.or.id/index.php/RESTI/article/view/4459)
-- **Status Link**: **Terverifikasi Aktif (Crossref 200 OK & OJS RESTI 200 OK, Bebas 404 & Bebas 403)**
-- **Rujukan Fondasi Matematis Algoritma EM & Campuran Gaussian**:
-  - A. P. Dempster, N. M. Laird, D. B. Rubin (1977). *Maximum Likelihood from Incomplete Data via the EM Algorithm*. Journal of the Royal Statistical Society: Series B (Methodological), Vol. 39, No. 1, pp. 1–38. DOI: [10.1111/j.2517-6161.1977.tb01600.x](https://doi.org/10.1111/j.2517-6161.1977.tb01600.x).
-  - Douglas Reynolds (2009). *Gaussian Mixture Models*. Encyclopedia of Biometrics, Springer, Boston, MA. DOI: [10.1007/978-0-387-73003-5_196](https://doi.org/10.1007/978-0-387-73003-5_196).
-- **Catatan Khusus Pengujian**: Menjustifikasi penggunaan Gaussian Mixture Model (GMM) sebagai pembanding berbasis kerapatan probabilitas kontinu (*density-based soft clustering*) pada komponen reduksi dimensi SVD korpus teks di jurnal terakreditasi SINTA 2. Hasil pengujian menunjukkan GMM sangat efisien (waktu latih 0.09 detik) dan menghasilkan koherensi semantik tinggi ($C_v = 0.4428$), namun distribusi kovarians penuh (*full covariance*) pada teks pendek informal memerlukan reduksi dimensi komponen laten agar matriks kovarians tidak mengalami singularitas.
+### 47. Algoritma Pembanding 5: Hierarchical Dirichlet Process (HDP)
+- **Judul**: *Hierarchical Dirichlet Processes*
+- **Penulis**: Yee Whye Teh, Michael I. Jordan, Matthew J. Beal, David M. Blei
+- **Jurnal**: Journal of the American Statistical Association (JASA), Vol. 101, No. 476, 2006, pp. 1566–1581.
+- **DOI**: [10.1198/016214506000000302](https://doi.org/10.1198/016214506000000302)
+- **Akses Langsung PDF Resmi (UC Berkeley)**: [Full Text PDF (stat.berkeley.edu)](https://www.stat.berkeley.edu/~jordan/hdp.pdf)
+- **Status Link**: **Terverifikasi Aktif (Taylor & Francis Crossref 200 OK & UC Berkeley 200 OK, Bebas 404 & Bebas 403)**
+- **Rujukan Penerapan Topic Modeling Bahasa Indonesia (Jurnal Nasional SINTA)**:
+  - Moch Erreza, Kartini, & Agung Mustika Rizki (2024). *Pencarian Topik Penelitian Pada Studi Kasus Jurnal JIFTI Menggunakan Teknik Hierarchical Dirichlet Processes*. Jurnal SPIRIT, Vol. 16, No. 1, pp. 18–25. DOI: [10.53567/spirit.v16i1.325](https://doi.org/10.53567/spirit.v16i1.325). Portal OJS: [Portal OJS Jurnal SPIRIT](https://stmik-yadika.ac.id/ejournal/index.php/spirit/article/view/325).
+- **Catatan Khusus Pengujian**: Menjustifikasi penggunaan Hierarchical Dirichlet Process (HDP via Gensim `HdpModel`) sebagai pembanding non-parametrik langsung terhadap algoritma utama kita (LDA). Jika pada LDA jumlah topik harus dipatok secara manual ($K=2$), HDP memungkinkan jumlah topik bertumbuh secara organik berdasarkan struktur data korpus (*Chinese Restaurant Franchise*). Pengujian HDP membuktikan apakah opini publik warganet secara alamiah memang terbagi menjadi 2 klaster besar ataukah membentuk sub-topik lanjutan tanpa batasan $K$ kaku.
 

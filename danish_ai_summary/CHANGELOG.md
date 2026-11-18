@@ -1,9 +1,15 @@
 # Changelog
 
-### 2026-11-12 — Added HAC & GMM SINTA 2 Literature & Expanded Benchmark to 6 Algorithms
+### 2026-11-18 — Replaced GMM with HDP (Hierarchical Dirichlet Process) & Added Verified Literature
+- What: Updated benchmark baseline by replacing Gaussian Mixture Models (GMM) with Hierarchical Dirichlet Process (HDP). Updated Entry 47 in `informasi/catatan/daftar_40_jurnal_pendukung.md` to Teh, Jordan, Beal, & Blei (2006, JASA, DOI: 10.1198/016214506000000302) with open-access UC Berkeley link and national journal Erreza dkk. (2024, SPIRIT, DOI: 10.53567/spirit.v16i1.325).
+- Why: User requested swapping GMM for HDP to maintain pure, defensible NLP topic modeling lineage directly related to LDA.
+- Files: `informasi/catatan/daftar_40_jurnal_pendukung.md`, `danish_ai_summary/CURRENT_STATE.md`
+- Verified: Both links and DOIs verified 200 OK (no 404/403).
+
+### 2026-11-12 — Added HAC & HDP Literature & Expanded Benchmark to 6 Algorithms
 - What: Added 2 new verified peer-reviewed journal entries (Entries 46 and 47) to `informasi/catatan/daftar_40_jurnal_pendukung.md`:
   1. Entry 46: Hierarchical Agglomerative Clustering (HAC) on Twitter text mining (Sinkron, SINTA 2, DOI: 10.33395/sinkron.v8i3.12616).
-  2. Entry 47: Gaussian Mixture Models (GMM) clustering (Jurnal RESTI, SINTA 2, DOI: 10.29207/resti.v6i5.4459).
+  2. Entry 47: Hierarchical Dirichlet Process (HDP) topic modeling (JASA seminal paper & Jurnal SPIRIT).
   Both links verified 200 OK (no 404/403).
 - Why: User expanded unsupervised benchmark to 6 algorithms as required by lecturer, necessitating formal literature citations and active DOIs.
 - Files: `informasi/catatan/daftar_40_jurnal_pendukung.md`

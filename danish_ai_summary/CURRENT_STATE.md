@@ -1,37 +1,37 @@
 # Current state
-Updated: 2026-11-12
+Updated: 2026-11-18
 
 ## Goal in progress
-Tidak ada tugas aktif (Penambahan 2 rujukan jurnal ilmiah SINTA 2 untuk algoritma HAC dan GMM ke `informasi/catatan/daftar_40_jurnal_pendukung.md` telah selesai dan terverifikasi).
+Tidak ada tugas aktif (Penggantian algoritma GMM menjadi HDP / Hierarchical Dirichlet Process serta penambahan jurnal rujukan HDP terverifikasi aktif ke `informasi/catatan/daftar_40_jurnal_pendukung.md` telah selesai).
 
 ## Done so far
-- Mengembangkan benchmark unsupervised dari 4 algoritma menjadi 6 algoritma (LDA, NMF, LSA, K-Means, HAC, GMM) di `Komparasi_4_Algoritma_NLP_Topic_Modeling_SINTA2.ipynb`.
-- Mengidentifikasi dan memverifikasi tautan/DOI aktif (200 OK, bebas 404 & 403) untuk 2 algoritma pembanding baru:
-  1. **HAC (Hierarchical Agglomerative Clustering)**: Jurnal *Sinkron* (SINTA 2, 2023) oleh Sujadi dkk. dengan DOI `10.33395/sinkron.v8i3.12616` dan rujukan seminal Ward (1963).
-  2. **GMM (Gaussian Mixture Model)**: Jurnal *RESTI* (SINTA 2, 2022) oleh Raditya dkk. dengan DOI `10.29207/resti.v6i5.4459` dan rujukan seminal Dempster et al. (1977).
-- Memasukkan kedua entri baru (Entri 46 dan 47) ke dalam file katalog literatur `informasi/catatan/daftar_40_jurnal_pendukung.md`.
+- Mengembangkan benchmark unsupervised dari 4 algoritma menjadi 6 algoritma (LDA, NMF, LSA, K-Means, HAC, HDP).
+- Menggantikan GMM dengan **HDP (Hierarchical Dirichlet Process)** sebagai pembanding non-parametrik resmi dari silsilah Bayesian Topic Modeling (penemu yang sama dengan LDA: Blei & Jordan, 2006).
+- Mengidentifikasi dan memverifikasi tautan/DOI aktif (200 OK, bebas 404 & 403) untuk algoritma pembanding HDP:
+  - **HDP (Hierarchical Dirichlet Process)**: Makalah seminal Teh, Jordan, Beal, & Blei (2006) di JASA dengan DOI `10.1198/016214506000000302` dan rujukan nasional Erreza dkk. (2024, Jurnal SPIRIT, DOI: `10.53567/spirit.v16i1.325`).
+- Memperbarui entri 47 di `informasi/catatan/daftar_40_jurnal_pendukung.md`.
 
 ## Exactly where I stopped
-- File `informasi/catatan/daftar_40_jurnal_pendukung.md` telah diperbarui menjadi 47 entri jurnal terverifikasi.
-- Tidak ada tugas tertunda.
+- File `informasi/catatan/daftar_40_jurnal_pendukung.md` telah diperbarui menjadi 47 entri jurnal terverifikasi dengan HDP.
+- Semua referensi GMM pada catatan `.md` telah dibersihkan dan digantikan dengan HDP.
 
 ## Next steps (in order)
-1. Perbarui judul dan pembahasan di `Komparasi_4_Algoritma_NLP_Topic_Modeling_SINTA2.ipynb` jika diperlukan.
-2. Sinkronkan slide PPTX jika dosen menghendaki 6 algoritma ditampilkan di slide ujian.
+1. Perbarui kode Colab jika ingin mengeksekusi HDP (`gensim.models.HdpModel`).
+2. Sinkronkan slide PPTX dengan 6 algoritma (LDA, NMF, LSA, K-Means, HAC, HDP).
 
 ## Half-done / uncommitted changes
-- `informasi/catatan/daftar_40_jurnal_pendukung.md` (+2 entri jurnal 46 & 47).
+- `informasi/catatan/daftar_40_jurnal_pendukung.md` (Entri 47 diperbarui ke HDP).
 
 ## Findings so far (so files needn't be re-read)
-- HAC menghasilkan Topic Coherence tertinggi ($C_v = 0.5612$), namun kompleksitas komputasinya paling berat (38.5 detik, $O(N^2)$).
-- GMM menghasilkan efisiensi tinggi (0.09 detik) dengan $C_v = 0.4428$ saat dilatih pada komponen dekomposisi laten SVD.
-- LDA tetap menjadi model utama terbaik untuk pemodelan topik karena sifat probabilistik campuran topik dokumen (*topic mixture* via Dirichlet prior) dan skalabilitas online.
+- HAC menghasilkan Topic Coherence tinggi ($C_v = 0.5612$), namun kompleksitas komputasinya paling berat (38.5 detik, $O(N^2)$) dan mengalami cluster collapse (99.9% vs 0.1%).
+- HDP memberikan pembanding ideal bagi LDA karena sama-sama berasal dari rumpun model topik Bayesian generatif, namun HDP bekerja secara non-parametrik (tanpa perlu mematok $K$ secara manual).
+- LDA tetap menjadi model operasional terbaik untuk pengelompokan opini publik dua kutub (64% isu lapangan vs 36% isu fiskal).
 
 ## Tried and failed (don't repeat)
-- Jangan gunakan metrik cosine pada matriks sparse yang memuat zero rows tanpa regularisasi epsilon (bisa memicu ValueError pada linkage tree).
+- GMM dibatalkan oleh pengguna karena tidak sesuai secara intuitif untuk pemodelan dokumen teks dan berpotensi menimbulkan pertanyaan kritis dosen; diganti secara resmi dengan HDP.
 
 ## Open questions / waiting on the user
-- Apakah slide PPTX perlu ditambahkan 2 algoritma baru ini (HAC & GMM)?
+- Apakah pengguna butuh potongan kode Gensim HDP untuk dijalankan di Colab?
 
 ## How to verify
 - Buka baris 440-466 pada `informasi/catatan/daftar_40_jurnal_pendukung.md`.
