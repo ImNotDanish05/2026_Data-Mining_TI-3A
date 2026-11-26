@@ -35,4 +35,5 @@
 - **Deliverable Standards**: Aim for publication-ready outputs aligned with ARJUNA SINTA 2 & SINTA 3 national journal indexing criteria.
 - **Evidence-Based Reporting**: Always provide concrete verification evidence (commands executed, exit codes, exact counts) rather than generic status statements.
 - **Self-Contained Local Execution**: Heavy machine learning models (Indo-RoBERTa) are cached strictly within `./models/` rather than global system cache directories.
+- **NEVER HARDCODE TOPIC LABELS / PSEUDO OUTPUTS**: Never hardcode semantic topic labels or subjective thematic titles (e.g., `'Topik 0: Isu Operasional'`, `'Topik 1: Isu Politik'`) into training code, print statements, or chart annotations. Unsupervised topic modeling produces latent mathematical indices (Topic 0, Topic 1) and word distributions; labeling must remain strictly neutral/generic (`Topik 0`, `Topik 1`) or derived programmatically, and never assume topic identities before inspecting empirical keywords.
 

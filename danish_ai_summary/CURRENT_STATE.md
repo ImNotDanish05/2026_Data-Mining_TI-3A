@@ -29,6 +29,7 @@ Tidak ada tugas aktif (Penggantian algoritma GMM menjadi HDP / Hierarchical Diri
 
 ## Tried and failed (don't repeat)
 - GMM dibatalkan oleh pengguna karena tidak sesuai secara intuitif untuk pemodelan dokumen teks dan berpotensi menimbulkan pertanyaan kritis dosen; diganti secara resmi dengan HDP.
+- JANGAN PERNAH melakukan hardcoding label semantik topik (seperti "Isu Operasional & Kualitas" atau "Isu Politik & Anggaran") ke dalam skrip evaluasi/print/chart; biarkan representasi tetap netral matematis (Topik 0, Topik 1) agar tidak menghasilkan interpretasi bias/prematur sebelum kata kunci diperiksa.
 
 ## Open questions / waiting on the user
 - Apakah pengguna butuh potongan kode Gensim HDP untuk dijalankan di Colab?
